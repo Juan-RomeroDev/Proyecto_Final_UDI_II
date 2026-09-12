@@ -1,0 +1,25 @@
+/*Mi cara*/
+#inicio img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%; /* opcional: la hace circular, muy común para fotos de perfil */
+}
+
+/*Iconos sobre cada tecnologia y su alineamiento*/
+.lista-tech {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-tech li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.lista-tech i {
+  font-size: 1.5rem;
+}

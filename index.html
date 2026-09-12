@@ -3,19 +3,278 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proyecto Final</title>
+    <title>My Final Proyect</title>
+    <link rel="stylesheet" href="CSS/Esqueleto_Pintura.css" />
+    <!-- Pagina utilizada para iconos de Tecnologias: https://devicon.dev/-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css"
+    />
   </head>
   <body>
-    <title>Proyecto Final</title>
+    <!-- header -->
+    <header>
+      <!-- Logo, nombre del sitio -->
+      <section id="inicio">
+        <h1>Mi Proyecto Final UDI II</h1>
+        <img src="IMG/MiCara_Header.jpg" alt="Imagen de mi cara en el header" />
+      </section>
+      <nav>
+        <!-- Menú de navegación, nav -->
+        <ol>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mi</a></li>
+          <li><a href="#lenguaje">Lenguajes</a></li>
+          <li><a href="#tecnologias">Tecnologias</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ol>
+      </nav>
+    </header>
 
-    <!-- Metodo de Contacto mio -->
+    <!-- main -->
+    <main>
+      <section id="sobre-mi">
+        <h2>Sobre mi</h2>
+        <p>
+          Desarrollador Aspirante a crecer y mantener una relación profesional
+          en una empresa. Enfocado en bases sólidas de C, SQL, Python, .NET.,
+          Atención Al Cliente, Apasionado por el aprendizaje continuo y resolver
+          problemas
+        </p>
+      </section>
+
+      <!-- Aside, Datos rapidos en una Tabla con tbody para organizarlo mejor -->
+      <aside>
+        <h2>Datos Rápidos</h2>
+        <table>
+          <tbody>
+            <tr>
+              <th scope="row">Ubicación</th>
+              <td>Rosario, Argentina</td>
+            </tr>
+            <tr>
+              <th scope="row">Disponibilidad</th>
+              <td>Full-time, remoto</td>
+            </tr>
+            <tr>
+              <th scope="row">Formación</th>
+              <td>Técnico Superior en Desarrollo de Software (en curso)</td>
+            </tr>
+            <tr>
+              <th scope="row">Enfoque</th>
+              <td>Backend - DevOps - FullStack</td>
+            </tr>
+            <tr>
+              <th scope="row">Stack Backend</th>
+              <td>C# - Microsoft SQL</td>
+            </tr>
+            <tr>
+              <th scope="row">Stack Frontend</th>
+              <td>HTML - CSS - JavaScript</td>
+            </tr>
+          </tbody>
+        </table>
+      </aside>
+
+      <section id="tecnologias">
+        <h2>Tecnologías</h2>
+
+        <h3>Desarrollo Web</h3>
+        <ul class="lista-tech">
+          <li><i class="devicon-html5-plain colored"></i> HTML5</li>
+          <li><i class="devicon-css3-plain colored"></i> CSS3</li>
+          <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
+        </ul>
+
+        <h3>Herramientas y Control de Versiones</h3>
+        <ul class="lista-tech">
+          <li><i class="devicon-git-plain colored"></i> Git</li>
+          <li><i class="devicon-github-original"></i> GitHub / GitHub Pages</li>
+          <li>
+            <i class="devicon-jira-plain colored"></i> Jira Service Management
+          </li>
+        </ul>
+
+        <h3>Fundamentos</h3>
+        <ul class="lista-tech">
+          <li><i class="devicon-c-plain colored"></i> C</li>
+          <li><i class="devicon-microsoftsqlserver-plain-wordmark"></i> SQL</li>
+          <li><i class="devicon-python-plain colored"></i> Python</li>
+          <li><i class="devicon-dot-net-plain colored"></i> .NET</li>
+        </ul>
+
+        <aside>
+          <h3>Actualmente Aprendiendo</h3>
+          <ul class="lista-tech">
+            <li><i class="devicon-nodejs-plain colored"></i> Node.js</li>
+            <li><i class="devicon-react-original colored"></i> React</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section id="lenguaje">
+        <h2>Lenguajes</h2>
+        <ol>
+          <li>
+            <strong>English:</strong> Level 6 Passed B1 - Asociación de amigos
+            de la escuela superior de administración municipal (Reading B2 and
+            Listening B2).
+          </li>
+          <li><strong>Portuguese:</strong> A1</li>
+          <li><strong>Spanish:</strong> Native.</li>
+        </ol>
+      </section>
+
+      <section id="proyectos">
+        <h2>Proyectos</h2>
+
+        <article>
+          <h3>Proyecto Final UDI II - Portfolio Personal</h3>
+          <img
+            src="img/proyecto-final.png"
+            alt="Captura de la página principal del portfolio"
+          />
+          <p>
+            Sitio web semántico y responsive desarrollado con HTML5, CSS3 y
+            JavaScript, alojado en GitHub Pages. Incluye estructura accesible,
+            control de versiones con Git y despliegue continuo.
+          </p>
+          <p>
+            <strong>Tecnologías:</strong> HTML, CSS, JavaScript, Git, GitHub
+            Pages
+          </p>
+          <a
+            href="https://juan-romerodev.github.io/Proyecto_Final_UDI_II/"
+            target="_blank"
+            rel="noopener"
+          >
+            Ver proyecto en vivo
+          </a>
+        </article>
+
+        <article>
+          <h3>Diagnóstico y Reparación de PC (Linux-Oriented)</h3>
+          <p>
+            Diagnóstico de hardware, clonación de discos (dd, Ghost) y
+            recuperación de particiones (GParted, SystemRescue) en entornos
+            Linux/Windows - Análisis de tráfico: latencia y rendimiento en redes
+            IP empleando herramientas de línea de comandos (ping, traceroute,
+            iperf3). habilidades directamente aplicables a troubleshooting de
+            nivel Tier 1.
+          </p>
+          <p>
+            <strong>Institución:</strong> Instituto Superior Zona Oeste (2025)
+          </p>
+        </article>
+
+        <article>
+          <h3>Hacking Ético - Laboratorios de Pentesting</h3>
+          <p>
+            Formación intensiva en Ethical Hacking cubriendo el ciclo completo
+            de pentesting (recon → explotación → post-explotación → escalada de
+            privilegios → reporting), con explotación práctica de CVEs reales
+            (Drupalgeddon2), vulnerabilidades web (SQLi, XSS, IDOR, File Upload,
+            SSTI) y técnicas de privilege escalation en Linux, usando Nmap,
+            Metasploit, Burp/manual testing, sqlmap, Hydra y LinPEAS.
+          </p>
+          <p>
+            <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
+          </p>
+        </article>
+
+        <article>
+          <h3>Workshop: "Desarrollo con Agentes de IA"</h3>
+          <p>
+            Workshop práctico de uso de inteligencia artificial generativa y
+            agentes de IA aplicados al desarrollo de software. Se abordan
+            herramientas basadas en modelos de lenguaje que pueden integrarse en
+            las distintas etapas del desarrollo: análisis de requisitos, diseño,
+            programacion, testing, debugging, documentacion y mantenimiento.
+          </p>
+          <p>
+            <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
+          </p>
+        </article>
+
+        <article>
+          <h3>Atención al Cliente y Gestión de Accesos</h3>
+          <p>
+            Experiencia en COTO C.I.C.S.A gestionando validación de identidad,
+            resolución de conflictos bajo presión y manejo simultáneo de
+            múltiples solicitudes — base directa para tareas de gestión de
+            accesos de usuario (user access management).
+          </p>
+          <p><strong>Lugar de Trabajo: </strong> COTO C.I.C.S.A (2025-2026)</p>
+        </article>
+      </section>
+
+      <article>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=GaPi4VJKi80jjNBb"
+          title="YouTube video player"
+          frameborder="0"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </article>
+    </main>
+
+    <!-- footer -->
     <footer>
-      <address>
-        Contacto Mio:
-        <a href="mailto:juanpabloromero426@gmail.com"
-          >Escribime cualquier consulta</a
-        >
-      </address>
+      <!-- Contacto, Redes Sociales, etc -->
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <address>
+          <a href="mailto:juanpabloromero426@gmail.com"
+            >juanpabloromero426@gmail.com</a
+          ><br />
+          <a href="tel:+5493410000000">+54 9 341 000-0000</a>
+        </address>
+      </section>
+      <!-- Redes Sociales -->
+      <aside>
+        <h2>Enlaces Rápidos</h2>
+        <ul>
+          <li>
+            <a href="Documentos/CV Sistemas Juan Pablo Romero.docx" download>
+              Descargar CV (DOCX)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/in/juan-pablo-romero-a9318429a/"
+              target="_blank"
+              rel="noopener"
+            >
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/Juan-RomeroDev"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="devicon-github-original"></i>
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </aside>
     </footer>
+
+    <script src="JS/Esqueleto_Se_Mueve.js"></script>
   </body>
 </html>
