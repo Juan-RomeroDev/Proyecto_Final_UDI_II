@@ -10,6 +10,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css"
     />
+    <!-- Pagina utilizada para iconos de documentos como el DOCX y extras-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <!-- header -->
@@ -27,7 +32,9 @@
           <li><a href="#lenguaje">Lenguajes</a></li>
           <li><a href="#tecnologias">Tecnologias</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#empresa">Empresa Aplicada</a></li>
           <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#contacto-form">Contactame</a></li>
         </ol>
       </nav>
     </header>
@@ -45,37 +52,56 @@
       </section>
 
       <!-- Aside, Datos rapidos en una Tabla con tbody para organizarlo mejor -->
-      <aside>
-        <h2>Datos Rápidos</h2>
-        <table>
-          <tbody>
-            <tr>
-              <th scope="row">Ubicación</th>
-              <td>Rosario, Argentina</td>
-            </tr>
-            <tr>
-              <th scope="row">Disponibilidad</th>
-              <td>Full-time, remoto</td>
-            </tr>
-            <tr>
-              <th scope="row">Formación</th>
-              <td>Técnico Superior en Desarrollo de Software (en curso)</td>
-            </tr>
-            <tr>
-              <th scope="row">Enfoque</th>
-              <td>Backend - DevOps - FullStack</td>
-            </tr>
-            <tr>
-              <th scope="row">Stack Backend</th>
-              <td>C# - Microsoft SQL</td>
-            </tr>
-            <tr>
-              <th scope="row">Stack Frontend</th>
-              <td>HTML - CSS - JavaScript</td>
-            </tr>
-          </tbody>
-        </table>
-      </aside>
+      <section id="tecnologias">
+        <h2>Tecnologías</h2>
+
+        <div class="tecnologias-grid">
+          <div class="categoria-tech">
+            <h3>Desarrollo Web</h3>
+            <ul class="lista-tech">
+              <li><i class="devicon-html5-plain colored"></i> HTML5</li>
+              <li><i class="devicon-css3-plain colored"></i> CSS3</li>
+              <li>
+                <i class="devicon-javascript-plain colored"></i> JavaScript
+              </li>
+            </ul>
+          </div>
+
+          <div class="categoria-tech">
+            <h3>Herramientas y Control de Versiones</h3>
+            <ul class="lista-tech">
+              <li><i class="devicon-git-plain colored"></i> Git</li>
+              <li>
+                <i class="devicon-github-original"></i> GitHub / GitHub Pages
+              </li>
+              <li>
+                <i class="devicon-jira-plain colored"></i> Jira Service
+                Management
+              </li>
+            </ul>
+          </div>
+
+          <div class="categoria-tech">
+            <h3>Fundamentos</h3>
+            <ul class="lista-tech">
+              <li><i class="devicon-c-plain colored"></i> C</li>
+              <li>
+                <i class="devicon-microsoftsqlserver-plain-wordmark"></i> SQL
+              </li>
+              <li><i class="devicon-python-plain colored"></i> Python</li>
+              <li><i class="devicon-dot-net-plain colored"></i> .NET</li>
+            </ul>
+          </div>
+
+          <div class="categoria-tech">
+            <h3>Actualmente Aprendiendo</h3>
+            <ul class="lista-tech">
+              <li><i class="devicon-nodejs-plain colored"></i> Node.js</li>
+              <li><i class="devicon-react-original colored"></i> React</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
       <section id="tecnologias">
         <h2>Tecnologías</h2>
@@ -207,49 +233,200 @@
           </p>
           <p><strong>Lugar de Trabajo: </strong> COTO C.I.C.S.A (2025-2026)</p>
         </article>
+
+        <article>
+          <h3>Systems Analysis & Documentation</h3>
+          <p>
+            Pollo Abasto Tu Almacén — Análisis de sistemas y documentación
+            técnica: redacción de Requisitos Funcionales, Reglas de Negocio,
+            Casos de Uso, Diagramas de Clases y Diccionarios de Datos. Modelado
+            de base de datos: diseño de modelos relacionales y Diagramas
+            Entidad-Relación (DER) con conceptos de SQL Server para gestión de
+            inventario y ventas. Fase de implementación planificada: desarrollo
+            futuro con Visual Basic conectado a una base de datos SQL Server,
+            usando Git/GitHub para control de versiones.
+          </p>
+          <p>
+            <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
+          </p>
+        </article>
       </section>
 
-      <article>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=GaPi4VJKi80jjNBb"
-          title="YouTube video player"
-          frameborder="0"
-          allow="
-            accelerometer;
-            autoplay;
-            clipboard-write;
-            encrypted-media;
-            gyroscope;
-            picture-in-picture;
-            web-share;
-          "
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </article>
+      <section id="empresa">
+        <h2>Sobre la Empresa: Sky Systems, Inc. (SkySys)</h2>
+
+        <div class="empresa-info">
+          <img
+            src="IMG/sky_systems_inc_logo.jpg"
+            alt="Logo de Sky Systems, Inc."
+          />
+          <div>
+            <p>
+              SkySys es una empresa de consultoría tecnológica, ingeniería y
+              servicios de staffing, fundada en 2011. Actualmente cuenta con
+              entre 201 y 500 empleados y ayuda a clientes de Norteamérica a
+              formar equipos técnicos de forma local y global en más de 100
+              países.
+            </p>
+            <p>
+              La vacante a la que apliqué es para
+              <strong>Technical Support Specialist (Tier 1)</strong>, un puesto
+              100% remoto para candidatos de toda Argentina, con jornada
+              completa (8 hs/día, lunes a viernes).
+            </p>
+          </div>
+        </div>
+
+        <h3>Por qué mi perfil encaja con este rol</h3>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Lo que pide SkySys</th>
+              <th scope="col">Lo que yo aporto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Troubleshooting y resolución de incidentes</td>
+              <td>
+                Formación en diagnóstico de hardware, redes y Ethical Hacking
+              </td>
+            </tr>
+            <tr>
+              <td>Soporte a plataformas SaaS y web</td>
+              <td>Base en HTML, CSS, JavaScript y desarrollo de software</td>
+            </tr>
+            <tr>
+              <td>Manejo de tickets (Jira Service Management)</td>
+              <td>Familiaridad con Jira Service Management</td>
+            </tr>
+            <tr>
+              <td>Comunicación vía Microsoft Teams y email (95%)</td>
+              <td>Inglés B1 certificado, lectura y escucha B2</td>
+            </tr>
+            <tr>
+              <td>Gestión de accesos de usuario y permisos</td>
+              <td>
+                Experiencia en validación de identidad y atención al cliente
+                (COTO)
+              </td>
+            </tr>
+            <tr>
+              <td>Aprendizaje rápido de sistemas nuevos</td>
+              <td>
+                Estudiante activo en Tecnicatura de Desarrollo de Software
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Responsabilidades Clave del Puesto</h3>
+        <ul>
+          <li>
+            Brindar soporte técnico a aplicaciones SaaS, web e internas
+            desarrolladas a medida.
+          </li>
+          <li>
+            Resolver incidentes de configuración, permisos y acceso de usuarios.
+          </li>
+          <li>
+            Gestionar y documentar solicitudes de soporte mediante Jira Service
+            Management.
+          </li>
+          <li>
+            Escalar problemas complejos a los equipos técnicos correspondientes.
+          </li>
+          <li>
+            Comunicarse con usuarios principalmente por Microsoft Teams y correo
+            electrónico.
+          </li>
+          <li>
+            Contribuir a la documentación de soporte y artículos de base de
+            conocimiento.
+          </li>
+        </ul>
+
+        <h3>Requisitos Solicitados</h3>
+        <ul>
+          <li>
+            2+ años de experiencia en soporte técnico, help desk o áreas afines.
+          </li>
+          <li>Sólidas habilidades de resolución de problemas y diagnóstico.</li>
+          <li>
+            Experiencia con plataformas de gestión de tickets (Jira, ServiceNow,
+            Zendesk o similares).
+          </li>
+          <li>Buena comunicación escrita y verbal.</li>
+          <li>
+            Capacidad de aprender nuevas herramientas y sistemas rápidamente.
+          </li>
+        </ul>
+
+        <h3>Requisitos Deseables (Preferred)</h3>
+        <ul>
+          <li>
+            Experiencia con WordPress u otro sistema de gestión de contenidos
+            (CMS).
+          </li>
+          <li>
+            Conocimientos de administración de accesos y permisos de usuario.
+          </li>
+          <li>Familiaridad con Jira Service Management.</li>
+          <li>
+            Soporte a plataformas de contenido web o publicaciones digitales.
+          </li>
+        </ul>
+
+        <h3>Perfil Ideal según SkySys</h3>
+        <p>
+          La empresa busca un perfil con curiosidad técnica y orientación al
+          servicio, que tenga una base sólida en soporte al usuario y
+          troubleshooting, y esté buscando crecer y expandir sus habilidades
+          técnicas. Aclaran explícitamente que no hace falta venir de un rol
+          Tier 2 tradicional — perfiles de Service Desk, Application Support o
+          soporte SaaS con buen criterio y comunicación también son bienvenidos.
+        </p>
+
+        <p class="disclaimer">
+          <em
+            >Nota: este proyecto es un trabajo académico de adaptación de CV
+            (UDI II). No representa una afiliación real con Sky Systems,
+            Inc.</em
+          >
+        </p>
+      </section>
     </main>
 
     <!-- footer -->
     <footer>
       <!-- Contacto, Redes Sociales, etc -->
       <section id="contacto">
-        <h2>Contacto</h2>
+        <h2>Mi Contacto</h2>
         <address>
           <a href="mailto:juanpabloromero426@gmail.com"
-            >juanpabloromero426@gmail.com</a
+            >Mi Correo Personal: juanpabloromero426@gmail.com</a
           ><br />
-          <a href="tel:+5493410000000">+54 9 341 000-0000</a>
+          <a href="tel:+5493410000000">Mi Telefono: +54 9 341 000-0000</a>
         </address>
       </section>
+
+      <section id="contacto-form">
+        <h2>Contactame</h2>
+        <form id="form-contacto">
+          <input type="text" id="nombre" placeholder="Name" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <textarea id="mensaje" placeholder="Message" required></textarea>
+          <button type="submit">ENVIAR</button>
+        </form>
+      </section>
+
       <!-- Redes Sociales -->
       <aside>
         <h2>Enlaces Rápidos</h2>
         <ul>
           <li>
             <a href="Documentos/CV Sistemas Juan Pablo Romero.docx" download>
-              Descargar CV (DOCX)
+              <i class="fa-solid fa-file-word"></i> Descargar CV (DOCX)
             </a>
           </li>
           <li>
@@ -258,6 +435,7 @@
               target="_blank"
               rel="noopener"
             >
+              <i class="devicon-linkedin-plain colored"></i>
               LinkedIn
             </a>
           </li>
