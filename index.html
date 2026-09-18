@@ -33,7 +33,7 @@
           <li><a href="#tecnologias">Tecnologias</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
           <li><a href="#empresa">Empresa Aplicada</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#Micontacto">Contacto</a></li>
           <li><a href="#contacto-form">Contactame</a></li>
         </ol>
       </nav>
@@ -103,42 +103,6 @@
         </div>
       </section>
 
-      <section id="tecnologias">
-        <h2>Tecnologías</h2>
-
-        <h3>Desarrollo Web</h3>
-        <ul class="lista-tech">
-          <li><i class="devicon-html5-plain colored"></i> HTML5</li>
-          <li><i class="devicon-css3-plain colored"></i> CSS3</li>
-          <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
-        </ul>
-
-        <h3>Herramientas y Control de Versiones</h3>
-        <ul class="lista-tech">
-          <li><i class="devicon-git-plain colored"></i> Git</li>
-          <li><i class="devicon-github-original"></i> GitHub / GitHub Pages</li>
-          <li>
-            <i class="devicon-jira-plain colored"></i> Jira Service Management
-          </li>
-        </ul>
-
-        <h3>Fundamentos</h3>
-        <ul class="lista-tech">
-          <li><i class="devicon-c-plain colored"></i> C</li>
-          <li><i class="devicon-microsoftsqlserver-plain-wordmark"></i> SQL</li>
-          <li><i class="devicon-python-plain colored"></i> Python</li>
-          <li><i class="devicon-dot-net-plain colored"></i> .NET</li>
-        </ul>
-
-        <aside>
-          <h3>Actualmente Aprendiendo</h3>
-          <ul class="lista-tech">
-            <li><i class="devicon-nodejs-plain colored"></i> Node.js</li>
-            <li><i class="devicon-react-original colored"></i> React</li>
-          </ul>
-        </aside>
-      </section>
-
       <section id="lenguaje">
         <h2>Lenguajes</h2>
         <ol>
@@ -157,10 +121,14 @@
 
         <article>
           <h3>Proyecto Final UDI II - Portfolio Personal</h3>
-          <img
-            src="img/proyecto-final.png"
-            alt="Captura de la página principal del portfolio"
-          />
+          <figure>
+            <img
+              src="IMG/ProyectoFinal"
+              alt="Imagen de Vista previa sobre el proyecto actual"
+            />
+            <figcaption>Primera versión del panel de usuarios.</figcaption>
+          </figure>
+
           <p>
             Sitio web semántico y responsive desarrollado con HTML5, CSS3 y
             JavaScript, alojado en GitHub Pages. Incluye estructura accesible,
@@ -400,7 +368,7 @@
     <!-- footer -->
     <footer>
       <!-- Contacto, Redes Sociales, etc -->
-      <section id="contacto">
+      <section id="Micontacto">
         <h2>Mi Contacto</h2>
         <address>
           <a href="mailto:juanpabloromero426@gmail.com"
@@ -413,13 +381,38 @@
       <section id="contacto-form">
         <h2>Contactame</h2>
         <form id="form-contacto">
-          <input type="text" id="nombre" placeholder="Name" required />
-          <input type="email" id="email" placeholder="Email" required />
-          <textarea id="mensaje" placeholder="Message" required></textarea>
+          <label for="correo">Correo electrónico</label>
+          <input
+            id="correo"
+            name="correo"
+            type="email"
+            required
+            minlength="3"
+            placeholder="Correo"
+          />
+
+          <label for="nombre">Nombre</label>
+          <input
+            id="nombre"
+            name="Nombre"
+            type="text"
+            required
+            minlength="3"
+            placeholder="Nombre"
+          />
+
+          <label for="mensaje">Mensaje</label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            required
+            minlength="3"
+            placeholder="Mensaje"
+          ></textarea>
+
           <button type="submit">ENVIAR</button>
         </form>
       </section>
-
       <!-- Redes Sociales -->
       <aside>
         <h2>Enlaces Rápidos</h2>
