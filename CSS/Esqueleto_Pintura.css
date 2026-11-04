@@ -1,3 +1,7 @@
+/* =========================================================
+   PALETA DE COLORES ROOT 
+   ========================================================= */
+
 :root {
   /* Fondos */
   --fondo-principal: #0a0a0a;
@@ -16,179 +20,433 @@
   /* Bordes */
   --borde: #8e2ec4;
 
-  /* Estado (opcional, para validaciones de formulario) */
+  /* Estado */
   --exito: #2ec46e;
   --peligro: #c42e4a;
-}
 
-/*MI CARA*/
-#inicio img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%; /* opcional: la hace circular, muy común para fotos de perfil */
+  /* Variables que faltaban (las usaba section y no existían) */
+  --superficie: #131018;
+  --radio: 10px;
 }
 
 /* APLICA CAJAS A TODOS */
 * {
-  /* Paso 1 */
   box-sizing: border-box;
 }
 
-/* TITULO H1 */
+/* =========================================================
+   BODY 
+   ========================================================= */
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background-color: var(--fondo-principal);
+  color: var(--texto-principal);
+  line-height: 1.6;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* TITULOS */
 h1 {
-  font-family: "Inter", sans-serif;
+  font-size: clamp(28px, 6vw, 48px);
   margin-bottom: 12px;
-  text-align: center;
 }
 
-/* TITULOS H2 */
 h2 {
-  font-family: "Inter", sans-serif;
-  margin-bottom: 12px;
-  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 16px;
 }
 
-/* Titulos H3 */
 h3 {
+  font-size: 1.25rem;
   margin-bottom: 12px;
-  text-align: center;
-  font-family: "Inter", sans-serif;
-}
-
-/*LISTA ORDENADA HEADER */
-li {
-  margin-bottom: 8px;
-  align-items: center;
-  text-align: center;
-  font-family: "Inter", sans-serif;
 }
 
 /* TEXTO GENERAL */
 p {
-  font-family: "Inter", sans-serif;
   line-height: 1.7;
   color: var(--texto-principal);
-  text-align: center;
 }
 
-/* HEADER */
+/* LINKS */
+a {
+  color: var(--acento-hover);
+}
+
+a:hover {
+  color: var(--texto-principal);
+}
+
+/* IMAGENES: nunca se pasan de su caja */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   HEADER
+   ========================= */
 header {
-  font-family: "Inter", sans-serif;
   background-color: var(--fondo-principal);
   border-bottom: 1px solid var(--borde);
   padding: 16px 32px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  gap: 16px;
 }
 
-header p {
-  font-family: "Inter", sans-serif;
-  font-size: 1.125rem;
-  margin-bottom: 32px;
-  text-align: center;
+/* MI CARA */
+#inicio img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--borde);
 }
 
-/* ASIDE - DIV: TECNOLOGIAS*/
-.tecnologias-grid {
-  font-family: "Inter", sans-serif;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  max-width: 700px;
+/* MENU: lista en fila, sin numeros */
+nav ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+}
+
+nav li {
+  margin-bottom: 0;
+}
+
+nav a {
+  color: var(--texto-principal);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--acento-hover);
+  text-decoration: underline;
+}
+
+/* =========================
+   MAIN
+   ========================= */
+main {
+  max-width: 95%;
   margin: 0 auto;
+  padding: 40px 20px;
 }
 
-.categoria-tech {
-  font-family: "Inter", sans-serif;
+/* SECTION: caja grande de cada parte (no toca el header) */
+main section,
+footer section {
+  margin-bottom: 24px;
+  padding: 24px;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+/* =========================
+   CAJAS CHICAS (todas comparten el mismo estilo)
+   ========================= */
+.categoria-tech,
+.caja-lenguaje,
+.caja-proyectos,
+.caja-curso,
+.caja-responsabilidades,
+.caja-requisitos,
+.caja-deseables,
+.caja-perfil-ideal,
+.caja-encaje {
+  background-color: var(--fondo-principal);
   border: 1px solid var(--borde);
   border-radius: 8px;
-  padding: 16px;
+  padding: 20px;
+}
+
+.caja-proyectos:hover,
+.caja-curso:hover,
+.caja-lenguaje:hover,
+.categoria-tech:hover {
+  border-color: var(--acento-hover);
+}
+
+/* =========================
+   GRILLAS: mobile first, 1 columna
+   ========================= */
+.tecnologias-grid,
+.grid-cajas-lenguajes,
+.grid-cajas-proyectos,
+.grid-cajas-cursos,
+.grid-cajas-Puesto-Responsabilidades {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.grid-cajas-Puesto-Responsabilidades {
+  margin-top: 24px;
+}
+
+/* Pantalla mediana: 2 columnas (lenguajes ya van de a 3) */
+@media (min-width: 700px) {
+  .tecnologias-grid,
+  .grid-cajas-proyectos,
+  .grid-cajas-cursos,
+  .grid-cajas-Puesto-Responsabilidades {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-cajas-lenguajes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .caja-perfil-ideal {
+    grid-column: span 2;
+  }
+}
+
+/* Pantalla ancha: cajas en horizontal */
+@media (min-width: 1000px) {
+  .tecnologias-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid-cajas-proyectos,
+  .grid-cajas-cursos,
+  .grid-cajas-Puesto-Responsabilidades {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .caja-perfil-ideal {
+    grid-column: span 3;
+  }
+}
+
+/* =========================
+   TECNOLOGIAS (iconos)
+   ========================= */
+.lista-tech {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-tech li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.lista-tech i {
+  font-size: 1.5rem;
+}
+
+/* =========================
+   PROYECTOS Y CURSOS (imagen de vista previa)
+   ========================= */
+.caja-proyectos figure,
+.caja-curso figure {
+  margin: 0 0 16px;
+}
+
+.caja-proyectos figure img,
+.caja-curso figure img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+figcaption {
+  font-size: 0.875rem;
+  color: var(--texto-secundario);
+}
+
+/* =========================
+   PUESTO: listas alineadas a la izquierda
+   ========================= */
+.caja-responsabilidades ul,
+.caja-requisitos ul,
+.caja-deseables ul {
+  padding-left: 20px;
+  text-align: left;
+}
+
+.caja-responsabilidades li,
+.caja-requisitos li,
+.caja-deseables li {
+  text-align: left;
+}
+
+/* =========================
+   EMPRESA
+   ========================= */
+.empresa-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.empresa-info img {
+  width: 140px;
+  border-radius: 8px;
+}
+
+.empresa-info div {
+  flex: 1;
+  min-width: 280px;
+}
+
+.disclaimer {
+  font-size: 0.875rem;
+  color: var(--texto-secundario);
 }
 
 /* TABLAS */
 table {
   width: 100%;
   border-collapse: collapse;
-  text-align: center;
 }
 
-/* ITEMS TABLAS */
 th,
 td {
-  font-family: "Inter", sans-serif;
-  color: var(--texto-principal);
   padding: 12px;
-  text-align: left;
   border-bottom: 1px solid var(--borde);
-  text-align: center;
 }
 
-/* MAIN */
-main {
-  font-family: "Inter", sans-serif;
-  max-width: auto;
-  margin: 0 auto;
-  padding: 40px 20px;
-  text-align: center;
+th {
+  color: var(--acento-hover);
 }
 
-/* BODY */
-body {
-  font-family: "Inter", sans-serif;
-  background-color: var(--fondo-principal);
+/* =========================
+   BOTONES (violeta, redondeados)
+   ========================= */
+.btn,
+button,
+footer aside a {
+  display: block;
+  padding: 10px 24px;
+  background-color: var(--acento);
   color: var(--texto-principal);
-  transition:
-    background-color 0.3s,
-    color 0.3s;
-  min-height: 100vh;
-  text-align: center;
+  border: none;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-/* SECTION */
-section {
-  font-family: "Inter", sans-serif;
-  margin-bottom: 24px;
-  padding: 24px;
-  background: var(--superficie);
-  border: 1px solid var(--borde);
-  border-radius: var(--radio);
-  text-align: center;
-  gap: 16px;
+.btn {
+  display: inline-block;
 }
 
-/* FOOTER */
+.btn:hover,
+button:hover,
+footer aside a:hover {
+  background-color: var(--acento-hover);
+  color: var(--texto-principal);
+}
+
+/* Fila de botones (ej: debajo de "Sobre mi") */
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* =========================
+   FOOTER: 3 cajas
+   ========================= */
 footer {
   padding: 24px;
   border-top: 1px solid var(--borde);
   background-color: var(--fondo-secundario);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
-footer p {
-  font-family: "Inter", sans-serif;
-  text-align: center;
-  font-size: 0.875rem;
+footer section {
+  margin-bottom: 0;
+}
+
+footer aside {
+  padding: 24px;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+@media (min-width: 900px) {
+  footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+address {
+  font-style: normal;
+  text-align: left;
+  line-height: 2;
+}
+
+/* FORMULARIO */
+#form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+#form-contacto label {
+  font-weight: 600;
+}
+
+#form-contacto input,
+#form-contacto textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: var(--fondo-principal);
   color: var(--texto-principal);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
 }
 
-/* Iconos sobre cada tecnologia y su alineamiento */
-.lista-tech {
+#form-contacto textarea {
+  min-height: 120px;
+}
+
+#form-contacto ::placeholder {
+  color: var(--texto-placeholder);
+}
+
+#form-contacto button {
+  align-self: center;
+  margin-top: 8px;
+}
+
+/* ENLACES RAPIDOS */
+footer aside ul {
   list-style: none;
   padding: 0;
-  text-align: center;
-}
-
-.lista-tech li {
+  margin: 0;
   display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-  text-align: center;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.lista-tech i {
-  font-size: 1.5rem;
-  text-align: center;
+footer aside li {
+  margin-bottom: 0;
 }

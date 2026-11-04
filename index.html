@@ -32,6 +32,7 @@
           <li><a href="#lenguaje">Lenguajes</a></li>
           <li><a href="#tecnologias">Tecnologias</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
           <li><a href="#empresa">Empresa Aplicada</a></li>
           <li><a href="#Micontacto">Contacto</a></li>
           <li><a href="#contacto-form">Contactame</a></li>
@@ -43,12 +44,18 @@
     <main>
       <section id="sobre-mi">
         <h2>Sobre mi</h2>
-        <p>
-          Desarrollador Aspirante a crecer y mantener una relación profesional
-          en una empresa. Enfocado en bases sólidas de C, SQL, Python, .NET.,
-          Atención Al Cliente, Apasionado por el aprendizaje continuo y resolver
-          problemas
-        </p>
+        <div class="caja-sobre-mi">
+          <p>
+            Desarrollador Aspirante a crecer y mantener una relación profesional
+            en una empresa. Enfocado en bases sólidas de C, SQL, Python, .NET.,
+            Atención Al Cliente, Apasionado por el aprendizaje continuo y
+            resolver problemas
+          </p>
+          <!-- Botón de acceso directo al contacto -->
+          <div class="caja-btn-contacto">
+            <a href="#contacto-form" class="btn-cta">¡Contáctame!</a>
+          </div>
+        </div>
       </section>
 
       <!-- Aside, Datos rapidos en una Tabla con tbody para organizarlo mejor -->
@@ -105,93 +112,125 @@
 
       <section id="lenguaje">
         <h2>Lenguajes</h2>
-        <ol>
-          <li>
-            <strong>English:</strong> Level 6 Passed B1 - Asociación de amigos
-            de la escuela superior de administración municipal (Reading B2 and
-            Listening B2).
-          </li>
-          <li><strong>Portuguese:</strong> A1</li>
-          <li><strong>Spanish:</strong> Native.</li>
-        </ol>
+        <div class="grid-cajas-lenguajes">
+          <div class="caja-lenguaje">
+            <h3>English</h3>
+            <p>
+              Level 6 Passed B1 - Asociación de amigos de la escuela superior de
+              administración municipal (Reading B2 and Listening B2).
+            </p>
+          </div>
+          <div class="caja-lenguaje">
+            <h3>Portuguese</h3>
+            <p>A1</p>
+          </div>
+          <div class="caja-lenguaje">
+            <h3>Spanish</h3>
+            <p>Native</p>
+          </div>
+        </div>
       </section>
-
+      <!-- Proyectos -->
       <section id="proyectos">
         <h2>Proyectos</h2>
+        <div class="grid-cajas-proyectos">
+          <article class="caja-proyectos">
+            <h3>Proyecto Final UDI II - Portfolio Personal</h3>
+            <figure>
+              <img
+                src="IMG/ProyectoFinal"
+                alt="Imagen de Vista previa sobre el proyecto actual"
+              />
+              <figcaption>Primera versión del panel de usuarios.</figcaption>
+            </figure>
+            <p>
+              Sitio web semántico y responsive desarrollado con HTML5, CSS3 y
+              JavaScript, alojado en GitHub Pages. Incluye estructura accesible,
+              control de versiones con Git y despliegue continuo.
+            </p>
+            <p>
+              <strong>Tecnologías:</strong> HTML, CSS, JavaScript, Git, GitHub
+              Pages
+            </p>
+            <a
+              href="https://juan-romerodev.github.io/Proyecto_Final_UDI_II/"
+              target="_blank"
+              rel="noopener"
+            >
+              Ver proyecto en vivo
+            </a>
+          </article>
 
-        <article>
-          <h3>Proyecto Final UDI II - Portfolio Personal</h3>
-          <figure>
-            <img
-              src="IMG/ProyectoFinal"
-              alt="Imagen de Vista previa sobre el proyecto actual"
-            />
-            <figcaption>Primera versión del panel de usuarios.</figcaption>
-          </figure>
+          <article class="caja-proyectos">
+            <h3>Diagnóstico y Reparación de PC (Linux-Oriented)</h3>
+            <p>
+              Diagnóstico de hardware, clonación de discos (dd, Ghost) y
+              recuperación de particiones (GParted, SystemRescue) en entornos
+              Linux/Windows - Análisis de tráfico: latencia y rendimiento en
+              redes IP empleando herramientas de línea de comandos (ping,
+              traceroute, iperf3). habilidades directamente aplicables a
+              troubleshooting de nivel Tier 1.
+            </p>
+            <p>
+              <strong>Institución:</strong> Instituto Superior Zona Oeste (2025)
+            </p>
+          </article>
 
-          <p>
-            Sitio web semántico y responsive desarrollado con HTML5, CSS3 y
-            JavaScript, alojado en GitHub Pages. Incluye estructura accesible,
-            control de versiones con Git y despliegue continuo.
-          </p>
-          <p>
-            <strong>Tecnologías:</strong> HTML, CSS, JavaScript, Git, GitHub
-            Pages
-          </p>
-          <a
-            href="https://juan-romerodev.github.io/Proyecto_Final_UDI_II/"
-            target="_blank"
-            rel="noopener"
-          >
-            Ver proyecto en vivo
-          </a>
-        </article>
+          <article class="caja-proyectos">
+            <h3>Hacking Ético - Laboratorios de Pentesting</h3>
+            <p>
+              Formación intensiva en Ethical Hacking cubriendo el ciclo completo
+              de pentesting (recon → explotación → post-explotación → escalada
+              de privilegios → reporting), con explotación práctica de CVEs
+              reales (Drupalgeddon2), vulnerabilidades web (SQLi, XSS, IDOR,
+              File Upload, SSTI) y técnicas de privilege escalation en Linux,
+              usando Nmap, Metasploit, Burp/manual testing, sqlmap, Hydra y
+              LinPEAS.
+            </p>
+            <p>
+              <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
+            </p>
+          </article>
 
-        <article>
-          <h3>Diagnóstico y Reparación de PC (Linux-Oriented)</h3>
-          <p>
-            Diagnóstico de hardware, clonación de discos (dd, Ghost) y
-            recuperación de particiones (GParted, SystemRescue) en entornos
-            Linux/Windows - Análisis de tráfico: latencia y rendimiento en redes
-            IP empleando herramientas de línea de comandos (ping, traceroute,
-            iperf3). habilidades directamente aplicables a troubleshooting de
-            nivel Tier 1.
-          </p>
-          <p>
-            <strong>Institución:</strong> Instituto Superior Zona Oeste (2025)
-          </p>
-        </article>
+          <article class="caja-proyectos">
+            <h3>Workshop: "Desarrollo con Agentes de IA"</h3>
+            <p>
+              Workshop práctico de uso de inteligencia artificial generativa y
+              agentes de IA aplicados al desarrollo de software. Se abordan
+              herramientas basadas en modelos de lenguaje que pueden integrarse
+              en las distintas etapas del desarrollo: análisis de requisitos,
+              diseño, programacion, testing, debugging, documentacion y
+              mantenimiento.
+            </p>
+            <p>
+              <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
+            </p>
+          </article>
 
-        <article>
-          <h3>Hacking Ético - Laboratorios de Pentesting</h3>
-          <p>
-            Formación intensiva en Ethical Hacking cubriendo el ciclo completo
-            de pentesting (recon → explotación → post-explotación → escalada de
-            privilegios → reporting), con explotación práctica de CVEs reales
-            (Drupalgeddon2), vulnerabilidades web (SQLi, XSS, IDOR, File Upload,
-            SSTI) y técnicas de privilege escalation en Linux, usando Nmap,
-            Metasploit, Burp/manual testing, sqlmap, Hydra y LinPEAS.
-          </p>
-          <p>
-            <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
-          </p>
-        </article>
+          <article class="caja-proyectos">
+            <h3>Systems Analysis & Documentation</h3>
+            <p>
+              Pollo Abasto Tu Almacén — Análisis de sistemas y documentación
+              técnica: redacción de Requisitos Funcionales, Reglas de Negocio,
+              Casos de Uso, Diagramas de Clases y Diccionarios de Datos.
+              Modelado de base de datos: diseño de modelos relacionales y
+              Diagramas Entidad-Relación (DER) con conceptos de SQL Server para
+              gestión de inventario y ventas. Fase de implementación
+              planificada: desarrollo futuro con Visual Basic conectado a una
+              base de datos SQL Server, usando Git/GitHub para control de
+              versiones.
+            </p>
+            <p>
+              <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
+            </p>
+          </article>
+        </div>
+      </section>
 
-        <article>
-          <h3>Workshop: "Desarrollo con Agentes de IA"</h3>
-          <p>
-            Workshop práctico de uso de inteligencia artificial generativa y
-            agentes de IA aplicados al desarrollo de software. Se abordan
-            herramientas basadas en modelos de lenguaje que pueden integrarse en
-            las distintas etapas del desarrollo: análisis de requisitos, diseño,
-            programacion, testing, debugging, documentacion y mantenimiento.
-          </p>
-          <p>
-            <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
-          </p>
-        </article>
+      <article id="experiencia">
+        <div class="caja-experiencia-header">
+          <h2>Experiencia Laboral</h2>
 
-        <article>
           <h3>Atención al Cliente y Gestión de Accesos</h3>
           <p>
             Experiencia en COTO C.I.C.S.A gestionando validación de identidad,
@@ -200,26 +239,18 @@
             accesos de usuario (user access management).
           </p>
           <p><strong>Lugar de Trabajo: </strong> COTO C.I.C.S.A (2025-2026)</p>
-        </article>
+        </div>
+      </article>
 
-        <article>
-          <h3>Systems Analysis & Documentation</h3>
-          <p>
-            Pollo Abasto Tu Almacén — Análisis de sistemas y documentación
-            técnica: redacción de Requisitos Funcionales, Reglas de Negocio,
-            Casos de Uso, Diagramas de Clases y Diccionarios de Datos. Modelado
-            de base de datos: diseño de modelos relacionales y Diagramas
-            Entidad-Relación (DER) con conceptos de SQL Server para gestión de
-            inventario y ventas. Fase de implementación planificada: desarrollo
-            futuro con Visual Basic conectado a una base de datos SQL Server,
-            usando Git/GitHub para control de versiones.
-          </p>
-          <p>
-            <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
-          </p>
-        </article>
+      <!-- Empresas y Puestos a los que Aspiro -->
+      <section id="aspiraciones">
+        <h2>Empresas y puestos a los que aspiro</h2>
+        <div class="lista-aspiraciones">
+          <!-- Los elementos de puestos y empresas se inyectarán dinámicamente con JavaScript -->
+        </div>
       </section>
 
+      <!--Empresa -->
       <section id="empresa">
         <h2>Sobre la Empresa: Sky Systems, Inc. (SkySys)</h2>
 
@@ -245,123 +276,144 @@
           </div>
         </div>
 
-        <h3>Por qué mi perfil encaja con este rol</h3>
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Lo que pide SkySys</th>
-              <th scope="col">Lo que yo aporto</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Troubleshooting y resolución de incidentes</td>
-              <td>
-                Formación en diagnóstico de hardware, redes y Ethical Hacking
-              </td>
-            </tr>
-            <tr>
-              <td>Soporte a plataformas SaaS y web</td>
-              <td>Base en HTML, CSS, JavaScript y desarrollo de software</td>
-            </tr>
-            <tr>
-              <td>Manejo de tickets (Jira Service Management)</td>
-              <td>Familiaridad con Jira Service Management</td>
-            </tr>
-            <tr>
-              <td>Comunicación vía Microsoft Teams y email (95%)</td>
-              <td>Inglés B1 certificado, lectura y escucha B2</td>
-            </tr>
-            <tr>
-              <td>Gestión de accesos de usuario y permisos</td>
-              <td>
-                Experiencia en validación de identidad y atención al cliente
-                (COTO)
-              </td>
-            </tr>
-            <tr>
-              <td>Aprendizaje rápido de sistemas nuevos</td>
-              <td>
-                Estudiante activo en Tecnicatura de Desarrollo de Software
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="caja-responsabilidades">
+          <h3>Por qué mi perfil encaja con este rol</h3>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Lo que pide SkySys</th>
+                <th scope="col">Lo que yo aporto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Troubleshooting y resolución de incidentes</td>
+                <td>
+                  Formación en diagnóstico de hardware, redes y Ethical Hacking
+                </td>
+              </tr>
+              <tr>
+                <td>Soporte a plataformas SaaS y web</td>
+                <td>Base en HTML, CSS, JavaScript y desarrollo de software</td>
+              </tr>
+              <tr>
+                <td>Manejo de tickets (Jira Service Management)</td>
+                <td>Familiaridad con Jira Service Management</td>
+              </tr>
+              <tr>
+                <td>Comunicación vía Microsoft Teams y email (95%)</td>
+                <td>Inglés B1 certificado, lectura y escucha B2</td>
+              </tr>
+              <tr>
+                <td>Gestión de accesos de usuario y permisos</td>
+                <td>
+                  Experiencia en validación de identidad y atención al cliente
+                  (COTO)
+                </td>
+              </tr>
+              <tr>
+                <td>Aprendizaje rápido de sistemas nuevos</td>
+                <td>
+                  Estudiante activo en Tecnicatura de Desarrollo de Software
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-        <h3>Responsabilidades Clave del Puesto</h3>
-        <ul>
-          <li>
-            Brindar soporte técnico a aplicaciones SaaS, web e internas
-            desarrolladas a medida.
-          </li>
-          <li>
-            Resolver incidentes de configuración, permisos y acceso de usuarios.
-          </li>
-          <li>
-            Gestionar y documentar solicitudes de soporte mediante Jira Service
-            Management.
-          </li>
-          <li>
-            Escalar problemas complejos a los equipos técnicos correspondientes.
-          </li>
-          <li>
-            Comunicarse con usuarios principalmente por Microsoft Teams y correo
-            electrónico.
-          </li>
-          <li>
-            Contribuir a la documentación de soporte y artículos de base de
-            conocimiento.
-          </li>
-        </ul>
+        <div class="grid-cajas-Puesto-Responsabilidades">
+          <div class="caja-responsabilidades">
+            <h3>Responsabilidades Clave del Puesto</h3>
+            <ul>
+              <li>
+                Brindar soporte técnico a aplicaciones SaaS, web e internas
+                desarrolladas a medida.
+              </li>
+              <li>
+                Resolver incidentes de configuración, permisos y acceso de
+                usuarios.
+              </li>
+              <li>
+                Gestionar y documentar solicitudes de soporte mediante Jira
+                Service Management.
+              </li>
+              <li>
+                Escalar problemas complejos a los equipos técnicos
+                correspondientes.
+              </li>
+              <li>
+                Comunicarse con usuarios principalmente por Microsoft Teams y
+                correo electrónico.
+              </li>
+              <li>
+                Contribuir a la documentación de soporte y artículos de base de
+                conocimiento.
+              </li>
+            </ul>
+          </div>
 
-        <h3>Requisitos Solicitados</h3>
-        <ul>
-          <li>
-            2+ años de experiencia en soporte técnico, help desk o áreas afines.
-          </li>
-          <li>Sólidas habilidades de resolución de problemas y diagnóstico.</li>
-          <li>
-            Experiencia con plataformas de gestión de tickets (Jira, ServiceNow,
-            Zendesk o similares).
-          </li>
-          <li>Buena comunicación escrita y verbal.</li>
-          <li>
-            Capacidad de aprender nuevas herramientas y sistemas rápidamente.
-          </li>
-        </ul>
+          <div class="caja-requisitos">
+            <h3>Requisitos Solicitados</h3>
+            <ul>
+              <li>
+                2+ años de experiencia en soporte técnico, help desk o áreas
+                afines.
+              </li>
+              <li>
+                Sólidas habilidades de resolución de problemas y diagnóstico.
+              </li>
+              <li>
+                Experiencia con plataformas de gestión de tickets (Jira,
+                ServiceNow, Zendesk o similares).
+              </li>
+              <li>Buena comunicación escrita y verbal.</li>
+              <li>
+                Capacidad de aprender nuevas herramientas y sistemas
+                rápidamente.
+              </li>
+            </ul>
+          </div>
 
-        <h3>Requisitos Deseables (Preferred)</h3>
-        <ul>
-          <li>
-            Experiencia con WordPress u otro sistema de gestión de contenidos
-            (CMS).
-          </li>
-          <li>
-            Conocimientos de administración de accesos y permisos de usuario.
-          </li>
-          <li>Familiaridad con Jira Service Management.</li>
-          <li>
-            Soporte a plataformas de contenido web o publicaciones digitales.
-          </li>
-        </ul>
+          <div class="caja-requisitos">
+            <h3>Requisitos Deseables (Preferred)</h3>
+            <ul>
+              <li>
+                Experiencia con WordPress u otro sistema de gestión de
+                contenidos (CMS).
+              </li>
+              <li>
+                Conocimientos de administración de accesos y permisos de
+                usuario.
+              </li>
+              <li>Familiaridad con Jira Service Management.</li>
+              <li>
+                Soporte a plataformas de contenido web o publicaciones
+                digitales.
+              </li>
+            </ul>
+          </div>
 
-        <h3>Perfil Ideal según SkySys</h3>
-        <p>
-          La empresa busca un perfil con curiosidad técnica y orientación al
-          servicio, que tenga una base sólida en soporte al usuario y
-          troubleshooting, y esté buscando crecer y expandir sus habilidades
-          técnicas. Aclaran explícitamente que no hace falta venir de un rol
-          Tier 2 tradicional — perfiles de Service Desk, Application Support o
-          soporte SaaS con buen criterio y comunicación también son bienvenidos.
-        </p>
+          <div class="caja-perfil_ideal">
+            <h3>Perfil Ideal según SkySys</h3>
+            <p>
+              La empresa busca un perfil con curiosidad técnica y orientación al
+              servicio, que tenga una base sólida en soporte al usuario y
+              troubleshooting, y esté buscando crecer y expandir sus habilidades
+              técnicas. Aclaran explícitamente que no hace falta venir de un rol
+              Tier 2 tradicional — perfiles de Service Desk, Application Support
+              o soporte SaaS con buen criterio y comunicación también son
+              bienvenidos.
+            </p>
+          </div>
 
-        <p class="disclaimer">
-          <em
-            >Nota: este proyecto es un trabajo académico de adaptación de CV
-            (UDI II). No representa una afiliación real con Sky Systems,
-            Inc.</em
-          >
-        </p>
+          <p class="disclaimer">
+            <em
+              >Nota: este proyecto es un trabajo académico de adaptación de CV
+              (UDI II). No representa una afiliación real con Sky Systems,
+              Inc.</em
+            >
+          </p>
+        </div>
       </section>
     </main>
 
@@ -370,79 +422,85 @@
       <!-- Contacto, Redes Sociales, etc -->
       <section id="Micontacto">
         <h2>Mi Contacto</h2>
-        <address>
-          <a href="mailto:juanpabloromero426@gmail.com"
-            >Mi Correo Personal: juanpabloromero426@gmail.com</a
-          ><br />
-          <a href="tel:+5493410000000">Mi Telefono: +54 9 341 000-0000</a>
-        </address>
+        <div class="caja-contacto">
+          <address>
+            <a href="mailto:juanpabloromero426@gmail.com"
+              >Mi Correo Personal: juanpabloromero426@gmail.com</a
+            ><br />
+            <a href="tel:+5493410000000">Mi Telefono: +54 9 341 000-0000</a>
+          </address>
+        </div>
       </section>
 
       <section id="contacto-form">
         <h2>Contactame</h2>
-        <form id="form-contacto">
-          <label for="correo">Correo electrónico</label>
-          <input
-            id="correo"
-            name="correo"
-            type="email"
-            required
-            minlength="3"
-            placeholder="Correo"
-          />
+        <div class="caja-formulario">
+          <form id="form-contacto">
+            <label for="correo">Correo electrónico</label>
+            <input
+              id="correo"
+              name="correo"
+              type="email"
+              required
+              minlength="3"
+              placeholder="Correo"
+            />
 
-          <label for="nombre">Nombre</label>
-          <input
-            id="nombre"
-            name="Nombre"
-            type="text"
-            required
-            minlength="3"
-            placeholder="Nombre"
-          />
+            <label for="nombre">Nombre</label>
+            <input
+              id="nombre"
+              name="Nombre"
+              type="text"
+              required
+              minlength="3"
+              placeholder="Nombre"
+            />
 
-          <label for="mensaje">Mensaje</label>
-          <textarea
-            id="mensaje"
-            name="mensaje"
-            required
-            minlength="3"
-            placeholder="Mensaje"
-          ></textarea>
+            <label for="mensaje">Mensaje</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              required
+              minlength="3"
+              placeholder="Mensaje"
+            ></textarea>
 
-          <button type="submit">ENVIAR</button>
-        </form>
+            <button type="submit">ENVIAR</button>
+          </form>
+        </div>
       </section>
       <!-- Redes Sociales -->
       <aside>
         <h2>Enlaces Rápidos</h2>
-        <ul>
-          <li>
-            <a href="Documentos/CV Sistemas Juan Pablo Romero.docx" download>
-              <i class="fa-solid fa-file-word"></i> Descargar CV (DOCX)
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://linkedin.com/in/juan-pablo-romero-a9318429a/"
-              target="_blank"
-              rel="noopener"
-            >
-              <i class="devicon-linkedin-plain colored"></i>
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/Juan-RomeroDev"
-              target="_blank"
-              rel="noopener"
-            >
-              <i class="devicon-github-original"></i>
-              GitHub
-            </a>
-          </li>
-        </ul>
+        <div class="caja-enlaces">
+          <ul>
+            <li>
+              <a href="Documentos/CV Sistemas Juan Pablo Romero.docx" download>
+                <i class="fa-solid fa-file-word"></i> Descargar CV (DOCX)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://linkedin.com/in/juan-pablo-romero-a9318429a/"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="devicon-linkedin-plain colored"></i>
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Juan-RomeroDev"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="devicon-github-original"></i>
+                GitHub
+              </a>
+            </li>
+          </ul>
+        </div>
       </aside>
     </footer>
 
