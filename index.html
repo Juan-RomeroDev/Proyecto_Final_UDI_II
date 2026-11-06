@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Final Proyect</title>
+    <title>Mi Proyecto Final UDI II</title>
     <link rel="stylesheet" href="CSS/Esqueleto_Pintura.css" />
     <!-- Pagina utilizada para iconos de Tecnologias: https://devicon.dev/-->
     <link
@@ -31,8 +31,10 @@
           <li><a href="#sobre-mi">Sobre mi</a></li>
           <li><a href="#lenguaje">Lenguajes</a></li>
           <li><a href="#tecnologias">Tecnologias</a></li>
+          <li><a href="#cursos">Cursos Realizados</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
           <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#aspiraciones">Aspiraciones</a></li>
           <li><a href="#empresa">Empresa Aplicada</a></li>
           <li><a href="#Micontacto">Contacto</a></li>
           <li><a href="#contacto-form">Contactame</a></li>
@@ -162,6 +164,29 @@
           </article>
 
           <article class="caja-proyectos">
+            <h3>Systems Analysis & Documentation</h3>
+            <p>
+              Pollo Abasto Tu Almacén — Análisis de sistemas y documentación
+              técnica: redacción de Requisitos Funcionales, Reglas de Negocio,
+              Casos de Uso, Diagramas de Clases y Diccionarios de Datos.
+              Modelado de base de datos: diseño de modelos relacionales y
+              Diagramas Entidad-Relación (DER) con conceptos de SQL Server para
+              gestión de inventario y ventas. Fase de implementación
+              planificada: desarrollo futuro con Visual Basic conectado a una
+              base de datos SQL Server, usando Git/GitHub para control de
+              versiones.
+            </p>
+            <p>
+              <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
+            </p>
+          </article>
+          </div>
+      </section>
+
+<!-- Cursos -->
+      <section id="cursos">
+        <h2>Cursos Realizados</h2>
+          <article class="caja-cursos">
             <h3>Diagnóstico y Reparación de PC (Linux-Oriented)</h3>
             <p>
               Diagnóstico de hardware, clonación de discos (dd, Ghost) y
@@ -176,7 +201,7 @@
             </p>
           </article>
 
-          <article class="caja-proyectos">
+          <article class="caja-cursos">
             <h3>Hacking Ético - Laboratorios de Pentesting</h3>
             <p>
               Formación intensiva en Ethical Hacking cubriendo el ciclo completo
@@ -192,7 +217,7 @@
             </p>
           </article>
 
-          <article class="caja-proyectos">
+          <article class="caja-cursos">
             <h3>Workshop: "Desarrollo con Agentes de IA"</h3>
             <p>
               Workshop práctico de uso de inteligencia artificial generativa y
@@ -201,24 +226,6 @@
               en las distintas etapas del desarrollo: análisis de requisitos,
               diseño, programacion, testing, debugging, documentacion y
               mantenimiento.
-            </p>
-            <p>
-              <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
-            </p>
-          </article>
-
-          <article class="caja-proyectos">
-            <h3>Systems Analysis & Documentation</h3>
-            <p>
-              Pollo Abasto Tu Almacén — Análisis de sistemas y documentación
-              técnica: redacción de Requisitos Funcionales, Reglas de Negocio,
-              Casos de Uso, Diagramas de Clases y Diccionarios de Datos.
-              Modelado de base de datos: diseño de modelos relacionales y
-              Diagramas Entidad-Relación (DER) con conceptos de SQL Server para
-              gestión de inventario y ventas. Fase de implementación
-              planificada: desarrollo futuro con Visual Basic conectado a una
-              base de datos SQL Server, usando Git/GitHub para control de
-              versiones.
             </p>
             <p>
               <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
@@ -246,7 +253,11 @@
       <section id="aspiraciones">
         <h2>Empresas y puestos a los que aspiro</h2>
         <div class="lista-aspiraciones">
-          <!-- Los elementos de puestos y empresas se inyectarán dinámicamente con JavaScript -->
+          <ul>
+            <li id="aspira1"></li>
+            <li id="aspira2"></li>
+            <li id="aspira3"></li>
+          </ul>
         </div>
       </section>
 
@@ -405,15 +416,14 @@
               bienvenidos.
             </p>
           </div>
-
-          <p class="disclaimer">
+        </div>
+        <p class="disclaimer">
             <em
               >Nota: este proyecto es un trabajo académico de adaptación de CV
               (UDI II). No representa una afiliación real con Sky Systems,
               Inc.</em
             >
           </p>
-        </div>
       </section>
     </main>
 
@@ -432,43 +442,22 @@
         </div>
       </section>
 
-      <section id="contacto-form">
-        <h2>Contactame</h2>
-        <div class="caja-formulario">
-          <form id="form-contacto">
-            <label for="correo">Correo electrónico</label>
-            <input
-              id="correo"
-              name="correo"
-              type="email"
-              required
-              minlength="3"
-              placeholder="Correo"
-            />
+      <form id="form-contacto">
+        <label for="correo">Correo electrónico</label>
+        <input id="correo" name="correo" type="email" placeholder="Correo" />
+        <span id="error-correo"></span>
 
-            <label for="nombre">Nombre</label>
-            <input
-              id="nombre"
-              name="Nombre"
-              type="text"
-              required
-              minlength="3"
-              placeholder="Nombre"
-            />
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Nombre" />
+        <span id="error-nombre"></span>
 
-            <label for="mensaje">Mensaje</label>
-            <textarea
-              id="mensaje"
-              name="mensaje"
-              required
-              minlength="3"
-              placeholder="Mensaje"
-            ></textarea>
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Mensaje"></textarea>
+        <span id="error-mensaje"></span>
 
-            <button type="submit">ENVIAR</button>
-          </form>
-        </div>
-      </section>
+        <button type="submit">ENVIAR</button>
+        <p id="resultado-form"></p>
+      </form>
       <!-- Redes Sociales -->
       <aside>
         <h2>Enlaces Rápidos</h2>

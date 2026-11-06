@@ -251,12 +251,12 @@ footer section {
    PROYECTOS Y CURSOS (imagen de vista previa)
    ========================= */
 .caja-proyectos figure,
-.caja-curso figure {
+.caja-cursos figure {
   margin: 0 0 16px;
 }
 
 .caja-proyectos figure img,
-.caja-curso figure img {
+.caja-cursos figure img {
   width: 100%;
   height: 160px;
   object-fit: cover;
@@ -400,7 +400,9 @@ address {
   line-height: 2;
 }
 
-/* FORMULARIO */
+/* =========================
+   FORMULARIO DE CONTACTO
+   ========================= */
 #form-contacto {
   display: flex;
   flex-direction: column;
@@ -435,6 +437,16 @@ address {
 #form-contacto button {
   align-self: center;
   margin-top: 8px;
+}
+
+.error {
+  border: 2px solid #b42318;
+}
+
+#error-correo,
+#error-nombre,
+#error-mensaje {
+  color: #b42318;
 }
 
 /* ENLACES RAPIDOS */
