@@ -1,11 +1,12 @@
 /* =========================================================
-   PALETA DE COLORES ROOT 
+   1. PALETA DE COLORES (variables)
    ========================================================= */
-
 :root {
   /* Fondos */
+  --superficie-clara: #241d30;
   --fondo-principal: #0a0a0a;
-  --fondo-secundario: #131018;
+  --fondo-secundario: #201d24;
+  --superficie: #131018;
 
   /* Acento (violeta) */
   --acento: #8e2ec4;
@@ -17,36 +18,38 @@
   --texto-secundario: #b0b0b0;
   --texto-placeholder: #888888;
 
-  /* Bordes */
+  /* Bordes y forma */
   --borde: #8e2ec4;
+  --radio: 10px;
 
   /* Estado */
   --exito: #2ec46e;
   --peligro: #c42e4a;
 
-  /* Variables que faltaban (las usaba section y no existían) */
-  --superficie: #131018;
-  --radio: 10px;
+  /* Tipografía */
+  --fuente: "verdana", verdana, sans-serif;
 }
 
-/* APLICA CAJAS A TODOS */
+/* =========================================================
+   2. BASE (todo el sitio)
+   ========================================================= */
 * {
   box-sizing: border-box;
 }
 
-/* =========================================================
-   BODY 
-   ========================================================= */
 body {
-  font-family: "Inter", Arial, sans-serif;
+  margin: 0;
+  font-family: var(--fuente);
   background-color: var(--fondo-principal);
   color: var(--texto-principal);
   line-height: 1.6;
-  min-height: 100vh;
   text-align: center;
 }
 
-/* TITULOS */
+.fondo-claro {
+  background-color: var(--superficie-clara);
+}
+
 h1 {
   font-size: clamp(28px, 6vw, 48px);
   margin-bottom: 12px;
@@ -62,62 +65,61 @@ h3 {
   margin-bottom: 12px;
 }
 
-/* TEXTO GENERAL */
 p {
   line-height: 1.7;
   color: var(--texto-principal);
+  font-family: var(--fuente);
 }
 
-/* LINKS */
 a {
   color: var(--acento-hover);
+  font-family: var(--fuente);
 }
 
 a:hover {
   color: var(--texto-principal);
+  font-family: var(--fuente);
 }
 
-/* IMAGENES: nunca se pasan de su caja */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* =========================
-   HEADER
-   ========================= */
+/* =========================================================
+   3. HEADER Y MENÚ
+   ========================================================= */
 header {
   background-color: var(--fondo-principal);
   border-bottom: 1px solid var(--borde);
-  padding: 16px 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
 }
 
-/* MI CARA */
+nav {
+  padding: 16px 32px;
+  border-top: 1px solid var(--borde);
+}
+
+/* Foto de cara (usar una imagen cuadrada para que el círculo salga perfecto) */
 #inicio img {
   width: 180px;
-  height: 180px;
-  object-fit: cover;
   border-radius: 50%;
   border: 3px solid var(--borde);
 }
 
-/* MENU: lista en fila, sin numeros */
+/* Menú: lista en fila (li con display flex no muestra número) */
 nav ol {
-  list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px 24px;
+  font-family: var(--fuente);
 }
 
 nav li {
-  margin-bottom: 0;
+  display: flex;
+  border-bottom: 1px solid var(--borde);
 }
 
 nav a {
@@ -130,17 +132,84 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* =========================
-   MAIN
-   ========================= */
-main {
-  max-width: 95%;
-  margin: 0 auto;
-  padding: 40px 20px;
+/* =========================================================
+   PRIMERA PLANA (hero)
+   ========================================================= */
+/* Mobile first: foto arriba, texto abajo */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 80px 5vw;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("../IMG/Hero.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-/* SECTION: caja grande de cada parte (no toca el header) */
-main section,
+.hero-texto {
+  max-width: 600px;
+  padding-left: 32px;
+  border-left: 3px solid var(--acento);
+  text-align: left;
+}
+
+.hero-etiqueta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--acento-hover);
+  margin-bottom: 8px;
+}
+
+.hero-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* Botón secundario: solo borde */
+.btn-secundario {
+  padding: 10px 24px;
+  border: 1px solid var(--texto-principal);
+  border-radius: 999px;
+  color: var(--texto-principal);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-secundario:hover {
+  border-color: var(--acento-hover);
+  color: var(--acento-hover);
+}
+
+/* Pantalla mediana en adelante: foto a la izquierda, mensaje a la derecha */
+@media (min-width: 700px) {
+  .hero {
+    flex-direction: row;
+    justify-content: center;
+    gap: 64px;
+    padding: 120px 5vw;
+  }
+}
+
+/* =========================================================
+   4. MAIN Y CAJAS GRANDES (secciones)
+   ========================================================= */
+main {
+  padding: 0;
+}
+
+/* Franja de ancho completo */
+main section {
+  padding: 48px 5vw;
+  background-color: var(--superficie);
+  border-bottom: 2px solid var(--borde);
+}
+
+/* Cajas del footer (siguen como antes) */
 footer section {
   margin-bottom: 24px;
   padding: 24px;
@@ -149,36 +218,38 @@ footer section {
   border-radius: var(--radio);
 }
 
-/* =========================
-   CAJAS CHICAS (todas comparten el mismo estilo)
-   ========================= */
+/* =========================================================
+   5. CAJAS CHICAS (todas comparten el mismo estilo)
+   ========================================================= */
 .categoria-tech,
-.caja-lenguaje,
+.caja-Idiomas,
 .caja-proyectos,
-.caja-curso,
+.caja-cursos,
 .caja-responsabilidades,
 .caja-requisitos,
-.caja-deseables,
-.caja-perfil-ideal,
-.caja-encaje {
+.caja-perfil_ideal {
   background-color: var(--fondo-principal);
   border: 1px solid var(--borde);
   border-radius: 8px;
   padding: 20px;
 }
 
+.categoria-tech:hover,
+.caja-Idiomas:hover,
 .caja-proyectos:hover,
-.caja-curso:hover,
-.caja-lenguaje:hover,
-.categoria-tech:hover {
+.caja-cursos:hover {
   border-color: var(--acento-hover);
 }
 
-/* =========================
-   GRILLAS: mobile first, 1 columna
-   ========================= */
+.caja-Idiomas .fi {
+  font-size: 1.5rem;
+}
+
+/* =========================================================
+   6. GRILLAS (mobile first: 1 columna)
+   ========================================================= */
 .tecnologias-grid,
-.grid-cajas-lenguajes,
+.grid-cajas-Idiomas,
 .grid-cajas-proyectos,
 .grid-cajas-cursos,
 .grid-cajas-Puesto-Responsabilidades {
@@ -191,7 +262,7 @@ footer section {
   margin-top: 24px;
 }
 
-/* Pantalla mediana: 2 columnas (lenguajes ya van de a 3) */
+/* Pantalla mediana */
 @media (min-width: 700px) {
   .tecnologias-grid,
   .grid-cajas-proyectos,
@@ -200,37 +271,35 @@ footer section {
     grid-template-columns: 1fr 1fr;
   }
 
-  .grid-cajas-lenguajes {
-    grid-template-columns: repeat(3, 1fr);
+  .grid-cajas-Idiomas {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .caja-perfil-ideal {
+  .caja-perfil_ideal {
     grid-column: span 2;
   }
 }
 
-/* Pantalla ancha: cajas en horizontal */
+/* Pantalla ancha (proyectos se queda en 2 columnas) */
 @media (min-width: 1000px) {
   .tecnologias-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  .grid-cajas-proyectos,
   .grid-cajas-cursos,
   .grid-cajas-Puesto-Responsabilidades {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .caja-perfil-ideal {
+  .caja-perfil_ideal {
     grid-column: span 3;
   }
 }
 
-/* =========================
-   TECNOLOGIAS (iconos)
-   ========================= */
+/* =========================================================
+   7. TECNOLOGÍAS (iconos)
+   ========================================================= */
 .lista-tech {
-  list-style: none;
   padding: 0;
 }
 
@@ -247,9 +316,9 @@ footer section {
   font-size: 1.5rem;
 }
 
-/* =========================
-   PROYECTOS Y CURSOS (imagen de vista previa)
-   ========================= */
+/* =========================================================
+   8. PROYECTOS Y CURSOS (imagen de vista previa)
+   ========================================================= */
 .caja-proyectos figure,
 .caja-cursos figure {
   margin: 0 0 16px;
@@ -258,8 +327,6 @@ footer section {
 .caja-proyectos figure img,
 .caja-cursos figure img {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
   border-radius: 8px;
 }
 
@@ -268,30 +335,28 @@ figcaption {
   color: var(--texto-secundario);
 }
 
-/* =========================
-   PUESTO: listas alineadas a la izquierda
-   ========================= */
+/* =========================================================
+   9. PUESTO (listas alineadas a la izquierda)
+   ========================================================= */
 .caja-responsabilidades ul,
-.caja-requisitos ul,
-.caja-deseables ul {
+.caja-requisitos ul {
   padding-left: 20px;
   text-align: left;
 }
 
 .caja-responsabilidades li,
-.caja-requisitos li,
-.caja-deseables li {
+.caja-requisitos li {
   text-align: left;
 }
 
-/* =========================
-   EMPRESA
-   ========================= */
+/* =========================================================
+   10. EMPRESA Y TABLA
+   ========================================================= */
+/* Mobile first: logo arriba y texto abajo; en pantalla mediana, en fila */
 .empresa-info {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 24px;
   margin-bottom: 24px;
 }
@@ -303,7 +368,12 @@ figcaption {
 
 .empresa-info div {
   flex: 1;
-  min-width: 280px;
+}
+
+@media (min-width: 700px) {
+  .empresa-info {
+    flex-direction: row;
+  }
 }
 
 .disclaimer {
@@ -311,7 +381,6 @@ figcaption {
   color: var(--texto-secundario);
 }
 
-/* TABLAS */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -327,48 +396,101 @@ th {
   color: var(--acento-hover);
 }
 
-/* =========================
-   BOTONES (violeta, redondeados)
-   ========================= */
-.btn,
+/* =========================================================
+   11. BOTONES (violeta, redondeados)
+   ========================================================= */
+.btn-cta,
 button,
 footer aside a {
-  display: block;
   padding: 10px 24px;
   background-color: var(--acento);
   color: var(--texto-principal);
   border: none;
   border-radius: 999px;
-  font-family: inherit;
+  font-family: var(--fuente);
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
 }
 
-.btn {
-  display: inline-block;
-}
-
-.btn:hover,
+.btn-cta:hover,
 button:hover,
 footer aside a:hover {
   background-color: var(--acento-hover);
   color: var(--texto-principal);
 }
 
-/* Fila de botones (ej: debajo de "Sobre mi") */
-.botones {
+/* Contenedor del botón "¡Contáctame!" (lo centra) */
+.caja-btn-contacto {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
-  margin-top: 16px;
 }
 
-/* =========================
-   FOOTER: 3 cajas
-   ========================= */
+/* =========================================================
+   PRIMERA PLANA (hero)
+   ========================================================= */
+.hero {
+  padding: 80px 5vw;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("../IMG/Hero.jpg");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid var(--borde);
+}
+
+.hero-texto {
+  max-width: 600px;
+  padding-left: 32px;
+  border-left: 3px solid var(--acento);
+  text-align: left;
+}
+
+.hero-etiqueta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--acento-hover);
+  margin-bottom: 8px;
+}
+
+.hero h2 {
+  font-size: clamp(32px, 6vw, 56px);
+  line-height: 1.1;
+}
+
+.hero-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* Botón secundario: solo borde */
+.btn-secundario {
+  padding: 10px 24px;
+  border: 1px solid var(--texto-principal);
+  border-radius: 999px;
+  color: var(--texto-principal);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-secundario:hover {
+  border-color: var(--acento-hover);
+  color: var(--acento-hover);
+}
+
+/* Pantalla mediana en adelante: más aire arriba y abajo */
+@media (min-width: 700px) {
+  .hero {
+    padding: 160px 5vw;
+  }
+}
+
+/* =========================================================
+   12. FOOTER (3 cajas: contacto, formulario, enlaces)
+   ========================================================= */
 footer {
   padding: 24px;
   border-top: 1px solid var(--borde);
@@ -390,19 +512,35 @@ footer aside {
 
 @media (min-width: 900px) {
   footer {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 address {
-  font-style: normal;
   text-align: left;
   line-height: 2;
 }
 
-/* =========================
-   FORMULARIO DE CONTACTO
-   ========================= */
+/* Enlaces rápidos */
+footer aside ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+footer aside li {
+  display: flex;
+}
+
+footer aside a {
+  flex: 1;
+}
+
+/* =========================================================
+   13. FORMULARIO DE CONTACTO
+   ========================================================= */
 #form-contacto {
   display: flex;
   flex-direction: column;
@@ -412,6 +550,7 @@ address {
 
 #form-contacto label {
   font-weight: 600;
+  font-family: var(--fuente);
 }
 
 #form-contacto input,
@@ -422,43 +561,26 @@ address {
   color: var(--texto-principal);
   border: 1px solid var(--borde);
   border-radius: 8px;
-  font-family: inherit;
+  font-family: var(--fuente);
   font-size: 1rem;
+  font-family: var(--fuente);
 }
 
 #form-contacto textarea {
-  min-height: 120px;
-}
-
-#form-contacto ::placeholder {
-  color: var(--texto-placeholder);
+  height: 120px;
 }
 
 #form-contacto button {
-  align-self: center;
-  margin-top: 8px;
+  margin: 8px auto 0;
 }
 
-.error {
-  border: 2px solid #b42318;
+/* Errores (los activa el JS con la clase "error") */
+#form-contacto .error {
+  border: 2px solid var(--peligro);
 }
 
 #error-correo,
 #error-nombre,
 #error-mensaje {
-  color: #b42318;
-}
-
-/* ENLACES RAPIDOS */
-footer aside ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-footer aside li {
-  margin-bottom: 0;
+  color: var(--peligro);
 }

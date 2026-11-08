@@ -15,28 +15,46 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <!-- Pagina utilizada para iconos de banderas en los idiomas que manejo yo -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css"
+    />
   </head>
   <body>
-    <!-- header -->
+    <!-- header, hero-->
     <header>
-      <!-- Logo, nombre del sitio -->
-      <section id="inicio">
-        <h1>Mi Proyecto Final UDI II</h1>
+      <section class="hero" id="inicio">
         <img src="IMG/MiCara_Header.jpg" alt="Imagen de mi cara en el header" />
+        <div class="hero-texto">
+          <p class="hero-etiqueta">
+            Soporte técnico · Desarrollo web · Aprendizaje continuo
+          </p>
+          <h1>Juan Pablo Romero</h1>
+          <h2>Soluciono problemas y construyo para la web</h2>
+          <p>
+            Desarrollador aspirante con base en soporte técnico, atención al
+            cliente y desarrollo de software.
+          </p>
+          <div class="hero-botones">
+            <a href="#contacto-form" class="btn-cta">Contactame →</a>
+            <a href="#proyectos" class="btn-secundario">Ver proyectos →</a>
+          </div>
+        </div>
       </section>
+
+      <!-- links internos-->
       <nav>
-        <!-- Menú de navegación, nav -->
         <ol>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#sobre-mi">Sobre mi</a></li>
-          <li><a href="#lenguaje">Lenguajes</a></li>
+          <li><a href="#Idiomas">Idiomas</a></li>
           <li><a href="#tecnologias">Tecnologias</a></li>
           <li><a href="#cursos">Cursos Realizados</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
           <li><a href="#experiencia">Experiencia</a></li>
           <li><a href="#aspiraciones">Aspiraciones</a></li>
           <li><a href="#empresa">Empresa Aplicada</a></li>
-          <li><a href="#Micontacto">Contacto</a></li>
           <li><a href="#contacto-form">Contactame</a></li>
         </ol>
       </nav>
@@ -60,8 +78,7 @@
         </div>
       </section>
 
-      <!-- Aside, Datos rapidos en una Tabla con tbody para organizarlo mejor -->
-      <section id="tecnologias">
+      <section id="tecnologias" class="fondo-claro">
         <h2>Tecnologías</h2>
 
         <div class="tecnologias-grid">
@@ -112,22 +129,22 @@
         </div>
       </section>
 
-      <section id="lenguaje">
-        <h2>Lenguajes</h2>
-        <div class="grid-cajas-lenguajes">
-          <div class="caja-lenguaje">
-            <h3>English</h3>
+      <section id="Idiomas">
+        <h2>Idiomas</h2>
+        <div class="grid-cajas-Idiomas">
+          <div class="caja-Idiomas">
+            <h3><span class="fi fi-us"></span> English</h3>
             <p>
               Level 6 Passed B1 - Asociación de amigos de la escuela superior de
               administración municipal (Reading B2 and Listening B2).
             </p>
           </div>
-          <div class="caja-lenguaje">
-            <h3>Portuguese</h3>
+          <div class="caja-Idiomas">
+            <h3><span class="fi fi-br"></span> Portuguese</h3>
             <p>A1</p>
           </div>
-          <div class="caja-lenguaje">
-            <h3>Spanish</h3>
+          <div class="caja-Idiomas">
+            <h3><span class="fi fi-ar"></span> Spanish</h3>
             <p>Native</p>
           </div>
         </div>
@@ -140,10 +157,10 @@
             <h3>Proyecto Final UDI II - Portfolio Personal</h3>
             <figure>
               <img
-                src="IMG/ProyectoFinal"
-                alt="Imagen de Vista previa sobre el proyecto actual"
+                src="IMG/VistaPreviaUDI_Prueba.png"
+                alt="Imagen del proyecto final UDI II - Portfolio Personal"
               />
-              <figcaption>Primera versión del panel de usuarios.</figcaption>
+              <figcaption>Portfolio Personal</figcaption>
             </figure>
             <p>
               Sitio web semántico y responsive desarrollado con HTML5, CSS3 y
@@ -164,7 +181,14 @@
           </article>
 
           <article class="caja-proyectos">
-            <h3>Systems Analysis & Documentation</h3>
+            <h3>Documentacion y analisis de Pollo Abasto: Tu Almacen</h3>
+            <figure>
+              <img
+                src="IMG/Vista_Previa_Pollo-Abasto.png"
+                alt="Prototipo visual del proyecto Pollo Abasto Tu Almacén"
+              />
+              <figcaption>Prototipo Visual</figcaption>
+            </figure>
             <p>
               Pollo Abasto Tu Almacén — Análisis de sistemas y documentación
               técnica: redacción de Requisitos Funcionales, Reglas de Negocio,
@@ -179,15 +203,23 @@
             <p>
               <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
             </p>
+            <a
+              href="https://juan-romerodev.github.io/Proyecto_Final_UDI_II/"
+              target="_blank"
+              rel="noopener"
+            >
+              Prototipo visual Desarrollado con Lovable
+            </a>
           </article>
-          </div>
+        </div>
       </section>
 
-<!-- Cursos -->
+      <!-- Cursos -->
       <section id="cursos">
         <h2>Cursos Realizados</h2>
+        <div class="grid-cajas-cursos">
           <article class="caja-cursos">
-            <h3>Diagnóstico y Reparación de PC (Linux-Oriented)</h3>
+            <h3>Diagnóstico y Reparación de PC Orientado a Linux</h3>
             <p>
               Diagnóstico de hardware, clonación de discos (dd, Ghost) y
               recuperación de particiones (GParted, SystemRescue) en entornos
@@ -199,6 +231,9 @@
             <p>
               <strong>Institución:</strong> Instituto Superior Zona Oeste (2025)
             </p>
+            <figure>
+              <img src="IMG/logo-IZO.png" alt="Logo Escuela" />
+            </figure>
           </article>
 
           <article class="caja-cursos">
@@ -209,16 +244,18 @@
               de privilegios → reporting), con explotación práctica de CVEs
               reales (Drupalgeddon2), vulnerabilidades web (SQLi, XSS, IDOR,
               File Upload, SSTI) y técnicas de privilege escalation en Linux,
-              usando Nmap, Metasploit, Burp/manual testing, sqlmap, Hydra y
-              LinPEAS.
+              usando Nmap, Metasploit, sqlmap, Hydra y LinPEAS.
             </p>
             <p>
               <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
             </p>
+            <figure>
+              <img src="IMG/logo-IZO.png" alt="Logo Escuela" />
+            </figure>
           </article>
 
           <article class="caja-cursos">
-            <h3>Workshop: "Desarrollo con Agentes de IA"</h3>
+            <h3>Workshop: Desarrollo con Agentes de IA</h3>
             <p>
               Workshop práctico de uso de inteligencia artificial generativa y
               agentes de IA aplicados al desarrollo de software. Se abordan
@@ -230,11 +267,14 @@
             <p>
               <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
             </p>
+            <figure>
+              <img src="IMG/logo-IZO.png" alt="Logo Escuela" />
+            </figure>
           </article>
         </div>
       </section>
 
-      <article id="experiencia">
+      <section id="experiencia" class="fondo-claro">
         <div class="caja-experiencia-header">
           <h2>Experiencia Laboral</h2>
 
@@ -247,7 +287,7 @@
           </p>
           <p><strong>Lugar de Trabajo: </strong> COTO C.I.C.S.A (2025-2026)</p>
         </div>
-      </article>
+      </section>
 
       <!-- Empresas y Puestos a los que Aspiro -->
       <section id="aspiraciones">
@@ -418,26 +458,30 @@
           </div>
         </div>
         <p class="disclaimer">
-            <em
-              >Nota: este proyecto es un trabajo académico de adaptación de CV
-              (UDI II). No representa una afiliación real con Sky Systems,
-              Inc.</em
-            >
-          </p>
+          <em
+            >Nota: este proyecto es un trabajo académico de adaptación de CV
+            (UDI II). No representa una afiliación real con Sky Systems,
+            Inc.</em
+          >
+        </p>
       </section>
     </main>
 
     <!-- footer -->
     <footer>
       <!-- Contacto, Redes Sociales, etc -->
-      <section id="Micontacto">
+      <section id="contacto-form">
         <h2>Mi Contacto</h2>
         <div class="caja-contacto">
           <address>
             <a href="mailto:juanpabloromero426@gmail.com"
-              >Mi Correo Personal: juanpabloromero426@gmail.com</a
+              ><i class="fa-solid fa-envelope"></i> Mi Correo Personal:
+              juanpabloromero426@gmail.com</a
             ><br />
-            <a href="tel:+5493410000000">Mi Telefono: +54 9 341 000-0000</a>
+            <a href="tel:+5493410000000">
+              <i class="fa-solid fa-phone"></i> Mi Telefono: +54 9 341
+              000-0000</a
+            >
           </address>
         </div>
       </section>
@@ -464,7 +508,7 @@
         <div class="caja-enlaces">
           <ul>
             <li>
-              <a href="Documentos/CV Sistemas Juan Pablo Romero.docx" download>
+              <a href="Documentos/CV_Sistemas_Juan_Pablo_Romero.docx" download>
                 <i class="fa-solid fa-file-word"></i> Descargar CV (DOCX)
               </a>
             </li>
