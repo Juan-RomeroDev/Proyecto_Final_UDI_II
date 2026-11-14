@@ -1,15 +1,42 @@
-// ---------- lista de empresas y puestos ----------
-const mostrarAspiracion = (id, puesto, empresa) => {
-  document.getElementById(id).textContent = puesto + " - " + empresa;
+// ---------- tabla de empresas y puestos ----------
+const aspiraciones = [
+  {
+    puesto: "Technical Support Specialist (Tier 1)",
+    empresa: "Sky Systems, Inc.",
+  },
+  { puesto: "Help Desk / Soporte IT", empresa: "Neural Soft" },
+  { puesto: "Application Support", empresa: "Accenture Argentina" },
+];
+
+const cuerpoAspiraciones = document.getElementById("cuerpo-aspiraciones");
+
+const dibujarAspiraciones = () => {
+  cuerpoAspiraciones.innerHTML = "";
+
+  if (aspiraciones.length === 0) {
+    const filaVacia = document.createElement("tr");
+    filaVacia.innerHTML =
+      "<td colspan='2'>Todavía no hay puestos cargados</td>";
+    cuerpoAspiraciones.appendChild(filaVacia);
+    return;
+  }
+
+  aspiraciones.forEach((aspiracion) => {
+    const fila = document.createElement("tr");
+    fila.innerHTML =
+      "<td>" +
+      aspiracion.puesto +
+      "</td>" +
+      "<td>" +
+      aspiracion.empresa +
+      "</td>";
+    cuerpoAspiraciones.appendChild(fila);
+  });
 };
 
-mostrarAspiracion(
-  "aspira1",
-  "Technical Support Specialist (Tier 1)",
-  "Sky Systems, Inc.",
-);
-mostrarAspiracion("aspira2", "Help Desk / Soporte IT", "Completá tu empresa");
-mostrarAspiracion("aspira3", "Application Support", "Completá tu empresa");
+dibujarAspiraciones();
+
+dibujarAspiraciones();
 
 // ---------- Validacion del formulario ----------
 

@@ -37,6 +37,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 70px;
+}
+
 body {
   margin: 0;
   font-family: var(--fuente);
@@ -58,6 +62,7 @@ h1 {
 h2 {
   font-size: 1.75rem;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 h3 {
@@ -90,13 +95,19 @@ img {
    3. HEADER Y MENÚ
    ========================================================= */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 4px 16px;
   background-color: var(--fondo-principal);
-  border-bottom: 1px solid var(--borde);
 }
 
 nav {
-  padding: 16px 32px;
-  border-top: 1px solid var(--borde);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 8px 32px;
+  background-color: var(--fondo-principal);
 }
 
 /* Foto de cara (usar una imagen cuadrada para que el círculo salga perfecto) */
@@ -140,8 +151,8 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
-  padding: 80px 5vw;
+  gap: 24px;
+  padding: 32px 5vw;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
     url("../IMG/Hero.jpg");
@@ -156,8 +167,12 @@ nav a:hover {
   text-align: left;
 }
 
+.hero-texto h2 {
+  text-align: left;
+}
+
 .hero-etiqueta {
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--acento-hover);
   margin-bottom: 8px;
@@ -189,9 +204,9 @@ nav a:hover {
 @media (min-width: 700px) {
   .hero {
     flex-direction: row;
-    justify-content: center;
-    gap: 64px;
-    padding: 120px 5vw;
+    justify-content: left;
+    gap: 400px;
+    padding: 14px 5vw;
   }
 }
 
@@ -211,9 +226,9 @@ main section {
 
 /* Cajas del footer (siguen como antes) */
 footer section {
-  margin-bottom: 24px;
-  padding: 24px;
-  background: var(--superficie);
+  margin: 0;
+  padding: 16px 24px;
+  background: var(--surface);
   border: 1px solid var(--borde);
   border-radius: var(--radio);
 }
@@ -225,6 +240,7 @@ footer section {
 .caja-Idiomas,
 .caja-proyectos,
 .caja-cursos,
+.caja-experiencia,
 .caja-responsabilidades,
 .caja-requisitos,
 .caja-perfil_ideal {
@@ -237,8 +253,14 @@ footer section {
 .categoria-tech:hover,
 .caja-Idiomas:hover,
 .caja-proyectos:hover,
-.caja-cursos:hover {
+.caja-cursos:hover,
+.caja-experiencia:hover {
   border-color: var(--acento-hover);
+}
+
+.caja-experiencia {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .caja-Idiomas .fi {
@@ -319,22 +341,24 @@ footer section {
 /* =========================================================
    8. PROYECTOS Y CURSOS (imagen de vista previa)
    ========================================================= */
-.caja-proyectos figure,
-.caja-cursos figure {
+.caja-proyectos figure {
   margin: 0 0 16px;
 }
 
-.caja-proyectos figure img,
+/* Cursos: los logos van en fila y bajan si no entran */
+.caja-cursos figure {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 16px;
+}
+
 .caja-cursos figure img {
-  width: 100%;
-  border-radius: 8px;
+  width: 70px;
+  border-radius: 12px;
 }
-
-figcaption {
-  font-size: 0.875rem;
-  color: var(--texto-secundario);
-}
-
 /* =========================================================
    9. PUESTO (listas alineadas a la izquierda)
    ========================================================= */
@@ -428,100 +452,27 @@ footer aside a:hover {
 }
 
 /* =========================================================
-   PRIMERA PLANA (hero)
-   ========================================================= */
-.hero {
-  padding: 80px 5vw;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url("../IMG/Hero.jpg");
-  background-size: cover;
-  background-position: center;
-  border-bottom: 1px solid var(--borde);
-}
-
-.hero-texto {
-  max-width: 600px;
-  padding-left: 32px;
-  border-left: 3px solid var(--acento);
-  text-align: left;
-}
-
-.hero-etiqueta {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--acento-hover);
-  margin-bottom: 8px;
-}
-
-.hero h2 {
-  font-size: clamp(32px, 6vw, 56px);
-  line-height: 1.1;
-}
-
-.hero-botones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 24px;
-}
-
-/* Botón secundario: solo borde */
-.btn-secundario {
-  padding: 10px 24px;
-  border: 1px solid var(--texto-principal);
-  border-radius: 999px;
-  color: var(--texto-principal);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.btn-secundario:hover {
-  border-color: var(--acento-hover);
-  color: var(--acento-hover);
-}
-
-/* Pantalla mediana en adelante: más aire arriba y abajo */
-@media (min-width: 700px) {
-  .hero {
-    padding: 160px 5vw;
-  }
-}
-
-/* =========================================================
-   12. FOOTER (3 cajas: contacto, formulario, enlaces)
+   12. FOOTER (1 Caja)
    ========================================================= */
 footer {
-  padding: 24px;
+  padding: 16px;
   border-top: 1px solid var(--borde);
   background-color: var(--fondo-secundario);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-footer section {
-  margin-bottom: 0;
-}
-
-footer aside {
-  padding: 24px;
-  border: 1px solid var(--borde);
-  border-radius: var(--radio);
-}
-
-@media (min-width: 900px) {
-  footer {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }
 
 address {
-  text-align: left;
+  text-align: center;
   line-height: 2;
 }
 
-/* Enlaces rápidos */
+/* Enlaces rápidos: separados del formulario por una línea */
+footer aside {
+  margin-top: 16px;
+  padding-top: 8px;
+  border-top: 1px solid var(--borde);
+}
+
+/* Mobile first: botones en columna */
 footer aside ul {
   padding: 0;
   margin: 0;
@@ -532,10 +483,28 @@ footer aside ul {
 
 footer aside li {
   display: flex;
+  flex: 1;
 }
 
 footer aside a {
   flex: 1;
+}
+
+/* Pantalla mediana: los tres botones en una fila */
+@media (min-width: 700px) {
+  footer aside ul {
+    flex-direction: row;
+  }
+}
+
+/* Títulos más pegados al contenido dentro del footer */
+footer h2 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.caja-contacto {
+  margin-bottom: 8px;
 }
 
 /* =========================================================
@@ -544,7 +513,7 @@ footer aside a {
 #form-contacto {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   text-align: left;
 }
 
@@ -567,7 +536,7 @@ footer aside a {
 }
 
 #form-contacto textarea {
-  height: 120px;
+  height: 80px;
 }
 
 #form-contacto button {
