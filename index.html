@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi Proyecto Final UDI II</title>
+    <!-- Link hacia el archivo de estilo CSS -->
     <link rel="stylesheet" href="CSS/Esqueleto_Pintura.css" />
     <!-- Pagina utilizada para iconos de Tecnologias: https://devicon.dev/-->
     <link
@@ -22,7 +23,7 @@
     />
   </head>
   <body>
-    <!-- header: barra de navegación  -->
+    <!-- header: barra de navegación  --------------------------------------------------------------------------------------------------------------------->
     <header>
       <nav>
         <ol>
@@ -36,13 +37,31 @@
           <li><a href="#aspiraciones">Aspiraciones</a></li>
           <li><a href="#empresa">Empresa Aplicada</a></li>
           <li><a href="#contacto-form">Contactame</a></li>
+          <li>
+            <a
+              href="https://github.com/Juan-RomeroDev"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/in/juan-pablo-romero-a9318429a/"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+          </li>
         </ol>
       </nav>
     </header>
 
-    <!-- main -->
+    <!-- main ----------------------------------------------------------------------------------------------------------------------------------------->
     <main>
-      <!-- Hero: primera plana -->
+      <!-- Hero: primera plana ------------------------------------------------------------------------------------------------------------------------>
       <section class="hero" id="inicio">
         <img src="IMG/MiCara_Header.jpg" alt="Imagen de mi cara en el header" />
         <div class="hero-texto">
@@ -71,6 +90,20 @@
             comunicación en un entorno profesional Apasionado por el aprendizaje
             continuo y resolver problemas
           </p>
+          <p>
+            Habilidades Blandas: Atención al cliente, Resolución de problemas
+            Servicio rápido, Trabajo en equipo Colaboración
+          </p>
+
+          <div class="caja-btn-cv">
+            <a
+              href="Documentos/CV_Sistemas_Juan_Pablo_Romero.docx"
+              download
+              class="btn-cta"
+            >
+              <i class="fa-solid fa-file-word"></i> Descargar CV (DOCX)
+            </a>
+          </div>
         </div>
       </section>
 
@@ -78,6 +111,18 @@
         <h2>Tecnologías</h2>
 
         <div class="tecnologias-grid">
+          <div class="categoria-tech">
+            <h3>Lenguajes de Programación</h3>
+            <ul class="lista-tech">
+              <li><i class="devicon-c-plain colored"></i> C</li>
+              <li><i class="devicon-python-plain colored"></i> Python</li>
+              <li>
+                <i class="devicon-visualbasic-plain colored"></i> Visual Basic
+                .NET
+              </li>
+            </ul>
+          </div>
+
           <div class="categoria-tech">
             <h3>Desarrollo Web</h3>
             <ul class="lista-tech">
@@ -90,41 +135,69 @@
           </div>
 
           <div class="categoria-tech">
-            <h3>Herramientas y Control de Versiones</h3>
+            <h3>Bases de Datos</h3>
             <ul class="lista-tech">
-              <li><i class="devicon-git-plain colored"></i> Git</li>
               <li>
-                <i class="devicon-github-original"></i> GitHub / GitHub Pages
+                <i
+                  class="devicon-microsoftsqlserver-plain-wordmark colored"
+                ></i>
+                SQL (SQL Server)
+              </li>
+            </ul>
+          </div>
+
+          <div class="categoria-tech">
+            <h3>Herramientas y Plataformas</h3>
+            <ul class="lista-tech">
+              <li>
+                <i class="devicon-dot-net-plain colored"></i> .NET Framework
+              </li>
+              <li>
+                <i class="devicon-visualstudio-plain colored"></i> Visual Studio
+              </li>
+              <li>
+                <i class="devicon-vscode-plain colored"></i> Visual Studio Code
+              </li>
+              <li><i class="devicon-git-plain colored"></i> Git</li>
+              <li><i class="devicon-github-original"></i> GitHub</li>
+              <li><i class="fa-solid fa-cube"></i> VirtualBox</li>
+              <li>
+                <i class="devicon-google-plain colored"></i> Google Workspace
               </li>
               <li>
                 <i class="devicon-jira-plain colored"></i> Jira Service
                 Management
               </li>
-            </ul>
-          </div>
-
-          <div class="categoria-tech">
-            <h3>Fundamentos</h3>
-            <ul class="lista-tech">
-              <li><i class="devicon-c-plain colored"></i> C</li>
               <li>
-                <i class="devicon-microsoftsqlserver-plain-wordmark"></i> SQL
+                <i class="devicon-markdown-original"></i> Markdown para
+                documentación
               </li>
-              <li><i class="devicon-python-plain colored"></i> Python</li>
-              <li><i class="devicon-dot-net-plain colored"></i> .NET</li>
             </ul>
           </div>
 
           <div class="categoria-tech">
-            <h3>Todavia Por Aprender</h3>
+            <h3>Sistemas Operativos</h3>
+            <ul class="lista-tech">
+              <li><i class="fa-brands fa-linux"></i> Kali Linux</li>
+              <li><i class="devicon-ubuntu-plain colored"></i> Ubuntu</li>
+              <li><i class="fa-brands fa-ubuntu"></i> Lubuntu</li>
+              <li>
+                <i class="devicon-windows11-original colored"></i> Windows
+              </li>
+            </ul>
+          </div>
+
+          <div class="categoria-tech">
+            <h3>Todavía Por Aprender</h3>
             <ul class="lista-tech">
               <li><i class="devicon-nodejs-plain colored"></i> Node.js</li>
               <li><i class="devicon-react-original colored"></i> React</li>
+              <li><i class="devicon-php-plain colored"></i> PHP</li>
             </ul>
           </div>
         </div>
       </section>
-
+      <!-- Idiomas ---------------------------------------------------------------------------------------------------->
       <section id="Idiomas">
         <h2>Idiomas</h2>
         <div class="grid-cajas-Idiomas">
@@ -145,12 +218,15 @@
           </div>
         </div>
       </section>
-      <!-- Proyectos -->
+      <!-- Proyectos ------------------------------------------------------------------------------------------------>
       <section id="proyectos">
         <h2>Proyectos</h2>
         <div class="grid-cajas-proyectos">
           <article class="caja-proyectos">
-            <h3>Proyecto Final UDI II - Portfolio Personal</h3>
+            <h3>
+              Proyecto Final UDI II - Portfolio Personal
+              <i class="fa-brands fa-github icono-github"></i>
+            </h3>
             <figure>
               <img
                 src="IMG/VistaPreviaUDI_Prueba.png"
@@ -159,25 +235,55 @@
               <figcaption>Portfolio Personal</figcaption>
             </figure>
             <p>
-              Sitio web semántico y responsive desarrollado con HTML5, CSS3 y
-              JavaScript, alojado en GitHub Pages. Incluye estructura accesible,
-              control de versiones con Git y despliegue continuo.
+              Sitio web Sobre mi Portafolio/Personal desarrollado con HTML5,
+              CSS3 y JavaScript, alojado en GitHub Pages. Incluye estructura
+              accesible, control de versiones con Git Hub Desktop y despliegue
+              continuo.
             </p>
             <p>
-              <strong>Tecnologías:</strong> HTML, CSS, JavaScript, Git, GitHub
-              Pages
+              <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
             </p>
+            <p>
+              <strong>Tecnologías:</strong> HTML, CSS, JavaScript, Git Hub
+              Desktop, GitHub Pages, Git Hub, Visual Studio Code, Markdown,
+              Google Workspace
+            </p>
+
             <a
-              href="https://juan-romerodev.github.io/Proyecto_Final_UDI_II/"
+              href="https://github.com/Juan-RomeroDev/Proyecto_Final_UDI_II"
               target="_blank"
               rel="noopener"
             >
-              Ver proyecto en vivo
+              Ver repositorio en GitHub
             </a>
+            <p class="iconos-tech">
+              <i class="devicon-html5-plain colored" title="HTML5"></i>
+              <i class="devicon-css3-plain colored" title="CSS3"></i>
+              <i
+                class="devicon-javascript-plain colored"
+                title="JavaScript"
+              ></i>
+              <i class="devicon-github-original" title="GitHub"></i>
+              <i
+                class="devicon-vscode-plain colored"
+                title="Visual Studio Code"
+              ></i>
+              <i
+                class="devicon-markdown-original"
+                title="Markdown para documentación"
+              ></i>
+              <i
+                class="devicon-google-plain colored"
+                title="Google Workspace"
+              ></i>
+            </p>
           </article>
 
           <article class="caja-proyectos">
-            <h3>Documentacion y analisis de Pollo Abasto: Tu Almacen</h3>
+            <h3>
+              Documentacion y analisis de Pollo Abasto: Tu Almacen
+              <i class="fa-brands fa-github icono-github"></i>
+            </h3>
             <figure>
               <img
                 src="IMG/Vista_Previa_Pollo-Abasto.png"
@@ -186,18 +292,17 @@
               <figcaption>Prototipo Visual</figcaption>
             </figure>
             <p>
-              Pollo Abasto Tu Almacén — Análisis de sistemas y documentación
-              técnica: redacción de Requisitos Funcionales, Reglas de Negocio,
-              Casos de Uso, Diagramas de Clases y Diccionarios de Datos.
-              Modelado de base de datos: diseño de modelos relacionales y
-              Diagramas Entidad-Relación (DER) con conceptos de SQL Server para
-              gestión de inventario y ventas. Fase de implementación
-              planificada: desarrollo futuro con Visual Basic conectado a una
-              base de datos SQL Server, usando Git/GitHub para control de
-              versiones.
+              Pollo Abasto: Tu Almacén — documentación técnica: redacción de
+              Requisitos Funcionales, Reglas de Negocio, Casos de Uso, Diagramas
+              de Clases y Diccionarios de Datos, diseño de modelos relacionales
+              y Diagramas Entidad-Relación (DER)
             </p>
             <p>
               <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
+            </p>
+            <p>
+              <strong>Tecnologías:</strong> Git Hub, Git Hub Desktop, Visual
+              Studio Code, Markdown, Google Workspace
             </p>
             <a
               href="https://juan-romerodev.github.io/Proyecto_Final_UDI_II/"
@@ -206,15 +311,109 @@
             >
               Prototipo visual Desarrollado con Lovable
             </a>
+
+            <p class="iconos-tech">
+              <i class="devicon-github-original" title="GitHub"></i>
+              <i
+                class="devicon-vscode-plain colored"
+                title="Visual Studio Code"
+              ></i>
+              <i
+                class="devicon-markdown-original"
+                title="Markdown para documentación"
+              ></i>
+              <i
+                class="devicon-google-plain colored"
+                title="Google Workspace"
+              ></i>
+              <img
+                src="IMG/Logo-Lovable.svg"
+                alt="Logo de Lovable"
+                class="icono-lovable"
+                title="Lovable"
+              />
+            </p>
+            <p class="disclaimer">
+              <em
+                >Nota: este proyecto representa un negocio real el cual el
+                repositorio debe permanecer privado por datos sensibles</em
+              >
+            </p>
+          </article>
+
+          <article class="caja-proyectos caja-proyectos-centrada">
+            <h3>
+              Trabajo Programación I - Pollo Abasto: Tu Almacén
+              <i class="fa-brands fa-github icono-github"></i>
+            </h3>
+            <figure>
+              <img
+                src="IMG/Punto_Venta_Pollo.png"
+                alt="Vista previa del punto de venta de Pollo Abasto Tu Almacén"
+              />
+              <figcaption>Punto de Venta de Escritorio</figcaption>
+            </figure>
+            <p>
+              Pollo Abasto: Tu Almacén — punto de venta pensado para un almacén,
+              desarrollado como aplicación de escritorio conectada y
+              sincronizada con una base de datos: venta rápida de productos,
+              control de stock, cobro y consulta del historial de operaciones
+              sobre SQL Server.
+            </p>
+            <p>
+              <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
+            </p>
+            <p>
+              <strong>Tecnologías:</strong> Visual Studio, SQL (SQL Server),
+              .NET Framework, GitHub, Windows, Visual Basic .NET, Google
+              Workspace
+            </p>
+            <a
+              href="https://github.com/Juan-RomeroDev/Final_Programacion_I"
+              target="_blank"
+              rel="noopener"
+            >
+              Ver repositorio en GitHub
+            </a>
+            <p class="iconos-tech">
+              <i
+                class="devicon-visualstudio-plain colored"
+                title="Visual Studio"
+              ></i>
+              <i
+                class="devicon-microsoftsqlserver-plain-wordmark colored"
+                title="SQL Server"
+              ></i>
+              <i
+                class="devicon-dot-net-plain colored"
+                title=".NET Framework"
+              ></i>
+              <i class="devicon-github-original" title="GitHub"></i>
+              <i class="devicon-windows11-original colored" title="Windows"></i>
+              <i
+                class="devicon-visualbasic-plain colored"
+                title="Visual Basic .NET"
+              ></i>
+              <i
+                class="devicon-google-plain colored"
+                title="Google Workspace"
+              ></i>
+            </p>
           </article>
         </div>
       </section>
 
-      <!-- Cursos -->
+      <!-- Cursos ------------------------------------------------------------------------------------------------------------------------------------------------------------>
       <section id="cursos">
         <h2>Cursos Realizados</h2>
         <div class="grid-cajas-cursos">
           <article class="caja-cursos">
+            <figure>
+              <img
+                src="IMG/logo-IZO.png"
+                alt="Logo del Instituto Superior Zona Oeste (IZO)"
+              />
+            </figure>
             <h3>Diagnóstico y Reparación de PC Orientado a Linux</h3>
             <p>
               Diagnóstico de hardware, clonación de discos (dd, Ghost) y
@@ -227,19 +426,32 @@
             <p>
               <strong>Institución:</strong> Instituto Superior Zona Oeste (2025)
             </p>
+            <p><strong>Entorno Trabajado:</strong> Ubuntu</p>
             <figure>
+              <img src="IMG/Linux.png" alt="Logo de Linux" />
               <img
-                src="IMG/logo-IZO.png"
-                alt="Logo Escuela"
-                class="Logo-Escuela"
+                src="IMG/Ghost_Recuperacion.png"
+                alt="Clonación de disco con Ghost"
+                class="Captura-Curso"
+              />
+              <img
+                src="IMG/Gparted.png"
+                alt="Particiones gestionadas con GParted"
+                class="Captura-Curso"
               />
             </figure>
-            <figure>
-              <img src="IMG/Linux.png" alt="Logo Escuela" />
-            </figure>
+            <p class="iconos-tech">
+              <i class="devicon-ubuntu-plain colored" title="Ubuntu"></i>
+            </p>
           </article>
 
           <article class="caja-cursos">
+            <figure>
+              <img
+                src="IMG/logo-IZO.png"
+                alt="Logo del Instituto Superior Zona Oeste (IZO)"
+              />
+            </figure>
             <h3>Hacking Ético - Laboratorios de Pentesting</h3>
             <p>
               Formación intensiva en Ethical Hacking cubriendo el ciclo completo
@@ -252,19 +464,31 @@
             <p>
               <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
             </p>
+            <p>
+              <strong>Entornos Trabajados:</strong> Kali Linux, Windows, Virtual
+              Box
+            </p>
             <figure>
               <img
-                src="IMG/logo-IZO.png"
-                alt="Logo Escuela"
-                class="Logo-Escuela"
+                src="IMG/kali_linux.jpg"
+                alt="Logo Kali Linux"
+                class="Logo-Kali"
               />
             </figure>
-            <figure>
-              <img src="IMG/kali_linux.jpg" alt="Logo Kali Linux" />
-            </figure>
+            <p class="iconos-tech">
+              <i class="fa-brands fa-linux" title="Kali Linux"></i>
+              <i class="devicon-windows11-original colored" title="Windows"></i>
+              <i class="fa-solid fa-cube" title="VirtualBox"></i>
+            </p>
           </article>
 
           <article class="caja-cursos">
+            <figure>
+              <img
+                src="IMG/logo-IZO.png"
+                alt="Logo del Instituto Superior Zona Oeste (IZO)"
+              />
+            </figure>
             <h3>Workshop: Desarrollo con Agentes de IA</h3>
             <p>
               Workshop práctico de uso de inteligencia artificial generativa y
@@ -277,17 +501,25 @@
             <p>
               <strong>Institución:</strong> Instituto Superior Zona Oeste (2026)
             </p>
+            <p>
+              <strong>Agentes Trabajados:</strong> Claude Code, Cursor, Codex
+            </p>
             <figure>
               <img
-                src="IMG/logo-IZO.png"
-                alt="Logo Escuela"
-                class="Logo-Escuela"
+                src="IMG/logo_Claude_Code.png"
+                alt="Logo Claude Code"
+                class="Logo-Workshop"
               />
-            </figure>
-            <figure>
-              <img src="IMG/logo_Claude_Code.png" alt="Logo Claude Code" />
-              <img src="IMG/logo_Cursor.png" alt="Logo Cursor" />
-              <img src="IMG/logo_Codex.png" alt="Logo Codex" />
+              <img
+                src="IMG/logo_Cursor.png"
+                alt="Logo Cursor"
+                class="Logo-Workshop"
+              />
+              <img
+                src="IMG/logo_codex.png"
+                alt="Logo Codex"
+                class="Logo-Workshop"
+              />
             </figure>
           </article>
         </div>
@@ -306,21 +538,39 @@
         </article>
       </section>
 
-      <!-- Empresas y Puestos a los que Aspiro -->
+      <!-- Empresas y Puestos a los que Aspiro ----------------------------------------------------------------------------------------------------->
       <section id="aspiraciones">
         <h2>Empresas y puestos a los que aspiro</h2>
+
+        <div class="controles-aspiraciones">
+          <input
+            id="buscador-aspiraciones"
+            type="text"
+            placeholder="Buscar por puesto o empresa"
+          />
+          <p id="resumen-aspiraciones"></p>
+        </div>
+
+        <form id="form-aspiracion">
+          <input id="nuevo-puesto" type="text" placeholder="Puesto" />
+          <input id="nueva-empresa" type="text" placeholder="Empresa" />
+          <button type="submit">Agregar</button>
+        </form>
+        <p id="error-aspiracion"></p>
+
         <table>
           <thead>
             <tr>
-              <th scope="col">Puesto</th>
-              <th scope="col">Empresa</th>
+              <th id="th-puesto" scope="col">Puesto</th>
+              <th id="th-empresa" scope="col">Empresa</th>
+              <th scope="col">Acciones</th>
             </tr>
           </thead>
           <tbody id="cuerpo-aspiraciones"></tbody>
         </table>
       </section>
 
-      <!--Empresa -->
+      <!--Empresa ------------------------------------------------------------------------------------------------------------------------------------------------>
       <section id="empresa">
         <h2>Empresa a la cual aplique mi CV: Sky Systems, Inc. (SkySys)</h2>
 
@@ -487,83 +737,60 @@
     </main>
 
     <footer>
-      <!-- Contacto + formulario -->
+      <!-- Contacto + formulario ---------------------------------------------------------------------------------------------------------------------------------->
       <section id="contacto-form">
-        <h2>Mi Contacto</h2>
-        <div class="caja-contacto">
-          <address>
-            <a href="mailto:juanpabloromero426@gmail.com"
-              ><i class="fa-solid fa-envelope"></i> Mi Correo Personal:
-              juanpabloromero426@gmail.com</a
-            ><br />
-            <a href="tel:+5493410000000">
-              <i class="fa-solid fa-phone"></i> Mi Telefono: +54 9 341
-              000-0000</a
-            >
-          </address>
-        </div>
-
-        <form id="form-contacto">
-          <h2>Contactame</h2>
-          <label for="correo">Correo electrónico</label>
-          <input id="correo" name="correo" type="email" placeholder="Correo" />
-          <span id="error-correo"></span>
-
-          <label for="nombre">Nombre</label>
-          <input id="nombre" name="nombre" type="text" placeholder="Nombre" />
-          <span id="error-nombre"></span>
-
-          <label for="mensaje">Mensaje</label>
-          <textarea
-            id="mensaje"
-            name="mensaje"
-            placeholder="Mensaje"
-          ></textarea>
-          <span id="error-mensaje"></span>
-
-          <button type="submit">ENVIAR</button>
-          <p id="resultado-form"></p>
-        </form>
-
-        <!-- Redes Sociales -->
-        <aside>
-          <h2>Enlaces Rápidos</h2>
-          <div class="caja-enlaces">
-            <ul>
-              <li>
-                <a
-                  href="Documentos/CV_Sistemas_Juan_Pablo_Romero.docx"
-                  download
+        <div class="contacto-grid">
+          <div class="contacto-texto">
+            <h2>Contactame</h2>
+            <p>
+              Contame qué necesitás: una consulta por un puesto, una propuesta
+              de trabajo o cualquier duda sobre mi perfil. Te respondo a la
+              brevedad.
+            </p>
+            <div class="caja-contacto">
+              <address>
+                <a href="mailto:juanpabloromero426@gmail.com"
+                  ><i class="fa-solid fa-envelope"></i> Mi Correo Personal:
+                  juanpabloromero426@gmail.com</a
+                ><br />
+                <a href="tel:+5493410000000">
+                  <i class="fa-solid fa-phone"></i> Mi Telefono: +54 9 341
+                  000-0000</a
                 >
-                  <i class="fa-solid fa-file-word"></i> Descargar CV (DOCX)
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://linkedin.com/in/juan-pablo-romero-a9318429a/"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <i class="devicon-linkedin-plain colored"></i>
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/Juan-RomeroDev"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <i class="devicon-github-original"></i>
-                  GitHub
-                </a>
-              </li>
-            </ul>
+              </address>
+            </div>
           </div>
-        </aside>
+
+          <form id="form-contacto">
+            <label for="correo">Correo electrónico</label>
+            <input
+              id="correo"
+              name="correo"
+              type="email"
+              placeholder="Correo"
+            />
+            <span id="error-correo"></span>
+
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Nombre" />
+            <span id="error-nombre"></span>
+
+            <label for="mensaje">Mensaje</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              placeholder="Mensaje"
+            ></textarea>
+            <span id="error-mensaje"></span>
+
+            <button type="submit">ENVIAR</button>
+            <p id="resultado-form"></p>
+          </form>
+        </div>
       </section>
     </footer>
 
+    <!-- Link hacia el archivo de Ejecución de JavaScript -->
     <script src="JS/Esqueleto_Se_Mueve.js"></script>
   </body>
 </html>

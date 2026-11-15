@@ -3,10 +3,11 @@
    ========================================================= */
 :root {
   /* Fondos */
-  --superficie-clara: #241d30;
-  --fondo-principal: #0a0a0a;
-  --fondo-secundario: #201d24;
-  --superficie: #131018;
+  --superficie-clara: #1d1831;
+  --fondo-principal: #000000;
+  --fondo-secundario: #000000;
+  --superficie: #000000;
+  --superficie-caja: #0c0a15;
 
   /* Acento (violeta) */
   --acento: #8e2ec4;
@@ -52,6 +53,12 @@ body {
 
 .fondo-claro {
   background-color: var(--superficie-clara);
+  background-image: linear-gradient(
+    180deg,
+    #292247 0%,
+    #100e1c 60%,
+    #000000 100%
+  );
 }
 
 h1 {
@@ -154,8 +161,13 @@ nav a:hover {
   gap: 24px;
   padding: 32px 5vw;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url("../IMG/Hero.jpg");
+    linear-gradient(
+      120deg,
+      rgba(74, 62, 127, 0.72) 0%,
+      rgba(20, 14, 33, 0.78) 45%,
+      rgba(0, 0, 0, 0.92) 100%
+    ),
+    url("../IMG/Hero.png");
   background-size: cover;
   background-position: center;
 }
@@ -204,8 +216,8 @@ nav a:hover {
 @media (min-width: 700px) {
   .hero {
     flex-direction: row;
-    justify-content: left;
-    gap: 400px;
+    justify-content: flex-start;
+    gap: 32px;
     padding: 14px 5vw;
   }
 }
@@ -228,15 +240,13 @@ main section {
 footer section {
   margin: 0;
   padding: 16px 24px;
-  background: var(--surface);
-  border: 1px solid var(--borde);
+  background: var(--superficie);
   border-radius: var(--radio);
 }
 
 /* =========================================================
    5. CAJAS CHICAS (todas comparten el mismo estilo)
    ========================================================= */
-.categoria-tech,
 .caja-Idiomas,
 .caja-proyectos,
 .caja-cursos,
@@ -244,13 +254,12 @@ footer section {
 .caja-responsabilidades,
 .caja-requisitos,
 .caja-perfil_ideal {
-  background-color: var(--fondo-principal);
+  background-color: var(--superficie-caja);
   border: 1px solid var(--borde);
   border-radius: 8px;
   padding: 20px;
 }
 
-.categoria-tech:hover,
 .caja-Idiomas:hover,
 .caja-proyectos:hover,
 .caja-cursos:hover,
@@ -270,7 +279,15 @@ footer section {
 /* =========================================================
    6. GRILLAS (mobile first: 1 columna)
    ========================================================= */
-.tecnologias-grid,
+/* Tecnologías: una fila por categoría, sin tarjetas */
+.tecnologias-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .grid-cajas-Idiomas,
 .grid-cajas-proyectos,
 .grid-cajas-cursos,
@@ -286,11 +303,18 @@ footer section {
 
 /* Pantalla mediana */
 @media (min-width: 700px) {
-  .tecnologias-grid,
   .grid-cajas-proyectos,
   .grid-cajas-cursos,
   .grid-cajas-Puesto-Responsabilidades {
     grid-template-columns: 1fr 1fr;
+  }
+
+  /* Ocupa las dos columnas, pero se limita al ancho de una sola
+     tarjeta y queda centrada */
+  .caja-proyectos-centrada {
+    grid-column: span 2;
+    max-width: 50%;
+    margin: 0 auto;
   }
 
   .grid-cajas-Idiomas {
@@ -304,10 +328,6 @@ footer section {
 
 /* Pantalla ancha (proyectos se queda en 2 columnas) */
 @media (min-width: 1000px) {
-  .tecnologias-grid {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-
   .grid-cajas-cursos,
   .grid-cajas-Puesto-Responsabilidades {
     grid-template-columns: 1fr 1fr 1fr;
@@ -321,28 +341,80 @@ footer section {
 /* =========================================================
    7. TECNOLOGÍAS (iconos)
    ========================================================= */
+/* Cada categoría es una fila: título a la izquierda, tecnologías al lado */
+.categoria-tech {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.categoria-tech h3 {
+  color: var(--acento-hover);
+}
+
 .lista-tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
   padding: 0;
+  margin: 0;
 }
 
 .lista-tech li {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
   font-size: 1.1rem;
-  margin-bottom: 8px;
 }
 
 .lista-tech i {
   font-size: 1.5rem;
 }
 
+/* Pantalla ancha: el título ocupa una columna fija y los ítems van en línea */
+@media (min-width: 1000px) {
+  .categoria-tech {
+    display: grid;
+    grid-template-columns: 330px 1fr;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .categoria-tech h3 {
+    margin-bottom: 0;
+    text-align: right;
+  }
+
+  .lista-tech {
+    justify-content: flex-start;
+  }
+}
+
 /* =========================================================
    8. PROYECTOS Y CURSOS (imagen de vista previa)
    ========================================================= */
+/* Icono de GitHub a la derecha del título del proyecto */
+.caja-proyectos h3 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* El icono es solo decorativo: no es un enlace */
+.caja-proyectos .icono-github {
+  font-size: 1.75rem;
+  color: var(--texto-secundario);
+}
+
 .caja-proyectos figure {
   margin: 0 0 16px;
+}
+
+/* La captura de la tarjeta centrada va más chica que el ancho de la caja */
+.caja-proyectos-centrada figure img {
+  max-width: 600px;
 }
 
 /* Cursos: los logos van en fila y bajan si no entran */
@@ -357,7 +429,41 @@ footer section {
 
 .caja-cursos figure img {
   width: 70px;
+}
+
+/* Solo los logos del Workshop llevan esquinas redondeadas */
+.caja-cursos .Logo-Workshop {
   border-radius: 12px;
+}
+
+/* Kali se ve un poco más grande que el resto de los logos */
+.caja-cursos .Logo-Kali {
+  width: 90px;
+}
+
+/* Capturas de programas (Ghost / GParted): más grandes que un logo */
+.caja-cursos .Captura-Curso {
+  width: 140px;
+}
+
+/* Fila de iconos de tecnologías al pie de una tarjeta */
+.iconos-tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  color: var(--texto-secundario);
+}
+
+/* Lovable es un SVG descargado, no una fuente: se le fija el ancho
+   para que quede a la altura del resto de los iconos */
+.iconos-tech .icono-lovable {
+  width: 24px;
+  height: auto;
 }
 /* =========================================================
    9. PUESTO (listas alineadas a la izquierda)
@@ -424,8 +530,7 @@ th {
    11. BOTONES (violeta, redondeados)
    ========================================================= */
 .btn-cta,
-button,
-footer aside a {
+button {
   padding: 10px 24px;
   background-color: var(--acento);
   color: var(--texto-principal);
@@ -439,14 +544,13 @@ footer aside a {
 }
 
 .btn-cta:hover,
-button:hover,
-footer aside a:hover {
+button:hover {
   background-color: var(--acento-hover);
   color: var(--texto-principal);
 }
 
-/* Contenedor del botón "¡Contáctame!" (lo centra) */
-.caja-btn-contacto {
+/* Contenedor del botón "Descargar CV" (lo centra) */
+.caja-btn-cv {
   display: flex;
   justify-content: center;
 }
@@ -463,38 +567,7 @@ footer {
 address {
   text-align: center;
   line-height: 2;
-}
-
-/* Enlaces rápidos: separados del formulario por una línea */
-footer aside {
-  margin-top: 16px;
-  padding-top: 8px;
-  border-top: 1px solid var(--borde);
-}
-
-/* Mobile first: botones en columna */
-footer aside ul {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-footer aside li {
-  display: flex;
-  flex: 1;
-}
-
-footer aside a {
-  flex: 1;
-}
-
-/* Pantalla mediana: los tres botones en una fila */
-@media (min-width: 700px) {
-  footer aside ul {
-    flex-direction: row;
-  }
+  font-style: normal;
 }
 
 /* Títulos más pegados al contenido dentro del footer */
@@ -510,11 +583,37 @@ footer h2 {
 /* =========================================================
    13. FORMULARIO DE CONTACTO
    ========================================================= */
+/* Una columna en el celular, dos en pantalla ancha.
+   max-width evita que la sección se estire por toda la pantalla. */
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contacto-texto h2 {
+  text-align: left;
+}
+
+@media (min-width: 900px) {
+  .contacto-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+}
+
 #form-contacto {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
   text-align: left;
+  padding: 24px;
+  background-color: var(--superficie-caja);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
 }
 
 #form-contacto label {
@@ -532,7 +631,6 @@ footer h2 {
   border-radius: 8px;
   font-family: var(--fuente);
   font-size: 1rem;
-  font-family: var(--fuente);
 }
 
 #form-contacto textarea {
@@ -552,4 +650,46 @@ footer h2 {
 #error-nombre,
 #error-mensaje {
   color: var(--peligro);
+}
+
+/* =========================================================
+   14. ASPIRACIONES (buscador, alta y acciones)
+   ========================================================= */
+/* Imagen de fondo que presenta la sección (horizontal, recortada al centro) */
+#aspiraciones {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("../IMG/Empresas_Puestos_Aspiro.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.controles-aspiraciones,
+#form-aspiracion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+#buscador-aspiraciones,
+#nuevo-puesto,
+#nueva-empresa {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: var(--fondo-principal);
+  color: var(--texto-principal);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-family: var(--fuente);
+  font-size: 1rem;
+}
+
+#error-aspiracion {
+  color: var(--peligro);
+}
+
+#th-puesto,
+#th-empresa {
+  cursor: pointer;
 }
