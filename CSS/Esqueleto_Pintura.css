@@ -1,5 +1,5 @@
 /* =========================================================
-   1. PALETA DE COLORES (variables)
+   1. PALETA DE COLORES (variables - ROOT)
    ========================================================= */
 :root {
   /* Fondos */
@@ -173,8 +173,8 @@ nav a:hover {
 }
 
 .hero-texto {
-  max-width: 600px;
-  padding-left: 32px;
+  max-width: 1000px;
+  padding-left: 64px;
   border-left: 3px solid var(--acento);
   text-align: left;
 }
@@ -244,6 +244,13 @@ footer section {
   border-radius: var(--radio);
 }
 
+/* Sobre mí: el texto se limita para que el bloque quede centrado
+   igual que las demás cajas, en vez de estirarse de lado a lado */
+.caja-sobre-mi {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 /* =========================================================
    5. CAJAS CHICAS (todas comparten el mismo estilo)
    ========================================================= */
@@ -255,6 +262,13 @@ footer section {
 .caja-requisitos,
 .caja-perfil_ideal {
   background-color: var(--superficie-caja);
+  /* Degradado: la tarjeta arranca violeta arriba y se apaga hacia el negro */
+  background-image: linear-gradient(
+    160deg,
+    #2a2049 0%,
+    #151027 45%,
+    #0c0a15 100%
+  );
   border: 1px solid var(--borde);
   border-radius: 8px;
   padding: 20px;
@@ -310,11 +324,14 @@ footer section {
   }
 
   /* Ocupa las dos columnas, pero se limita al ancho de una sola
-     tarjeta y queda centrada */
+     tarjeta y queda centrada.
+     El padding lateral extra compensa los 16px de más que le da el gap,
+     así su contenido mide igual que el de las otras tarjetas. */
   .caja-proyectos-centrada {
     grid-column: span 2;
     max-width: 50%;
     margin: 0 auto;
+    padding: 20px 28px;
   }
 
   .grid-cajas-Idiomas {
@@ -412,9 +429,10 @@ footer section {
   margin: 0 0 16px;
 }
 
-/* La captura de la tarjeta centrada va más chica que el ancho de la caja */
+/* La captura de la tarjeta centrada usa el ancho de la caja, igual que
+   las otras tarjetas de proyectos */
 .caja-proyectos-centrada figure img {
-  max-width: 600px;
+  max-width: 100%;
 }
 
 /* Cursos: los logos van en fila y bajan si no entran */
@@ -436,9 +454,17 @@ footer section {
   border-radius: 12px;
 }
 
-/* Kali se ve un poco más grande que el resto de los logos */
+/* La captura del escritorio de Kali necesita más ancho que un logo:
+   a 160px se alcanzan a distinguir el escritorio y las ventanas */
 .caja-cursos .Logo-Kali {
-  width: 90px;
+  width: 160px;
+}
+
+/* Logos de las herramientas (Hydra, Nmap): misma altura para que la
+   fila quede pareja, con el ancho que pida cada archivo */
+.caja-cursos .Logo-Herramienta {
+  height: 50px;
+  width: auto;
 }
 
 /* Capturas de programas (Ghost / GParted): más grandes que un logo */
@@ -612,6 +638,13 @@ footer h2 {
   text-align: left;
   padding: 24px;
   background-color: var(--superficie-caja);
+  /* Mismo degradado que las tarjetas, para que no quede plana */
+  background-image: linear-gradient(
+    160deg,
+    #2a2049 0%,
+    #151027 45%,
+    #0c0a15 100%
+  );
   border: 1px solid var(--borde);
   border-radius: var(--radio);
 }
@@ -692,4 +725,9 @@ footer h2 {
 #th-puesto,
 #th-empresa {
   cursor: pointer;
+}
+
+/* Botón para volver a los puestos de ejemplo */
+#restaurar-aspiraciones {
+  margin-top: 16px;
 }

@@ -1,5 +1,8 @@
-// ---------- tabla de empresas y puestos ----------
-let aspiraciones = [
+/* =========================================================
+   1. Tabla de Empresas y Puestos de Trabajo (Aspiraciones)
+   ========================================================= */
+// Datos de ejemplo: se usan la primera vez y al tocar "Restaurar lista".
+const aspiracionesIniciales = [
   {
     puesto: "Technical Support Specialist (Tier 1)",
     empresa: "Sky Systems, Inc.",
@@ -8,6 +11,9 @@ let aspiraciones = [
   { puesto: "Application Support", empresa: "Accenture Argentina" },
 ];
 
+// Copia de los datos iniciales: es la lista que se dibuja y se guarda.
+let aspiraciones = [...aspiracionesIniciales];
+
 const cuerpoAspiraciones = document.getElementById("cuerpo-aspiraciones");
 const buscadorAspiraciones = document.getElementById("buscador-aspiraciones");
 const resumenAspiraciones = document.getElementById("resumen-aspiraciones");
@@ -15,6 +21,7 @@ const formAspiracion = document.getElementById("form-aspiracion");
 const nuevoPuesto = document.getElementById("nuevo-puesto");
 const nuevaEmpresa = document.getElementById("nueva-empresa");
 const errorAspiracion = document.getElementById("error-aspiracion");
+const botonRestaurar = document.getElementById("restaurar-aspiraciones");
 const thPuesto = document.getElementById("th-puesto");
 const thEmpresa = document.getElementById("th-empresa");
 
@@ -39,32 +46,66 @@ const cargarAspiraciones = () => {
   }
 };
 
+// Guarda qué columna y qué sentido de orden está elegido.
+const guardarOrden = () => {
+  const orden = { columna: columna, ascendente: ascendente };
+  localStorage.setItem("orden-aspiraciones", JSON.stringify(orden));
+};
+
+// Recupera el orden de la última visita. Por defecto: Puesto A-Z.
+const cargarOrden = () => {
+  const texto = localStorage.getItem("orden-aspiraciones");
+
+  if (texto === null) {
+    return;
+  }
+
+  try {
+    const guardado = JSON.parse(texto);
+
+    if (guardado.columna === "empresa") {
+      columna = "empresa";
+    }
+
+    ascendente = guardado.ascendente === true;
+  } catch (error) {
+    columna = "puesto";
+    ascendente = true;
+  }
+};
+
+// Arma el título de una columna y le agrega la flecha si es la que ordena.
+const tituloColumna = (nombre, clave) => {
+  if (columna !== clave) {
+    return nombre;
+  }
+
+  if (ascendente === true) {
+    return nombre + " ▲";
+  }
+
+  return nombre + " ▼";
+};
+
 const dibujarAspiraciones = () => {
   cuerpoAspiraciones.innerHTML = "";
 
+  // Se ordena la lista original a propósito: el botón "Quitar" de cada fila
+  // guarda su posición dentro de "aspiraciones", así que el orden que se ve
+  // en la tabla y el orden del array tienen que ser el mismo.
+  // sort() y reverse() modifican el array en el lugar (clase 29).
   if (columna === "puesto") {
     aspiraciones.sort((a, b) => a.puesto.localeCompare(b.puesto));
-    thPuesto.textContent = "Puesto";
-    thEmpresa.textContent = "Empresa";
-    if (ascendente === true) {
-      thPuesto.textContent = "Puesto ▲";
-    } else {
-      thPuesto.textContent = "Puesto ▼";
-    }
   } else {
     aspiraciones.sort((a, b) => a.empresa.localeCompare(b.empresa));
-    thPuesto.textContent = "Puesto";
-    thEmpresa.textContent = "Empresa";
-    if (ascendente === true) {
-      thEmpresa.textContent = "Empresa ▲";
-    } else {
-      thEmpresa.textContent = "Empresa ▼";
-    }
   }
 
   if (ascendente === false) {
     aspiraciones.reverse();
   }
+
+  thPuesto.textContent = tituloColumna("Puesto", "puesto");
+  thEmpresa.textContent = tituloColumna("Empresa", "empresa");
 
   const textoBuscado = buscadorAspiraciones.value.trim().toLowerCase();
   let visibles = 0;
@@ -119,8 +160,14 @@ const dibujarAspiraciones = () => {
     cuerpoAspiraciones.appendChild(filaVacia);
   }
 
+  // El sustantivo cambia si la lista tiene un solo puesto.
+  let sustantivo = "puestos";
+  if (aspiraciones.length === 1) {
+    sustantivo = "puesto";
+  }
+
   resumenAspiraciones.textContent =
-    "Mostrando " + visibles + " de " + aspiraciones.length + " puestos";
+    "Mostrando " + visibles + " de " + aspiraciones.length + " " + sustantivo;
 };
 
 const ordenarPor = (nuevaColumna) => {
@@ -130,7 +177,26 @@ const ordenarPor = (nuevaColumna) => {
     columna = nuevaColumna;
     ascendente = true;
   }
+  guardarOrden();
   dibujarAspiraciones();
+};
+
+// Devuelve true si el puesto ya está cargado en esa misma empresa.
+const existeAspiracion = (puesto, empresa) => {
+  let existe = false;
+
+  aspiraciones.forEach((aspiracion) => {
+    const mismoPuesto =
+      aspiracion.puesto.toLowerCase() === puesto.toLowerCase();
+    const mismaEmpresa =
+      aspiracion.empresa.toLowerCase() === empresa.toLowerCase();
+
+    if (mismoPuesto === true && mismaEmpresa === true) {
+      existe = true;
+    }
+  });
+
+  return existe;
 };
 
 formAspiracion.addEventListener("submit", (evento) => {
@@ -144,6 +210,11 @@ formAspiracion.addEventListener("submit", (evento) => {
     return;
   }
 
+  if (existeAspiracion(puesto, empresa) === true) {
+    errorAspiracion.textContent = "Ya tenés ese puesto cargado en esa empresa";
+    return;
+  }
+
   aspiraciones.push({ puesto: puesto, empresa: empresa });
   nuevoPuesto.value = "";
   nuevaEmpresa.value = "";
@@ -151,6 +222,14 @@ formAspiracion.addEventListener("submit", (evento) => {
   guardarAspiraciones();
   dibujarAspiraciones();
 });
+
+// Limpiar el aviso del alta apenas se empieza a corregir
+const limpiarAvisoAlta = () => {
+  errorAspiracion.textContent = "";
+};
+
+nuevoPuesto.addEventListener("input", limpiarAvisoAlta);
+nuevaEmpresa.addEventListener("input", limpiarAvisoAlta);
 
 buscadorAspiraciones.addEventListener("input", dibujarAspiraciones);
 
@@ -162,11 +241,23 @@ thEmpresa.addEventListener("click", () => {
   ordenarPor("empresa");
 });
 
+// Vuelve a los tres puestos de ejemplo y los guarda.
+const restaurarAspiraciones = () => {
+  aspiraciones = [...aspiracionesIniciales];
+  errorAspiracion.textContent = "";
+  guardarAspiraciones();
+  dibujarAspiraciones();
+};
+
+botonRestaurar.addEventListener("click", restaurarAspiraciones);
+
+cargarOrden();
 cargarAspiraciones();
 dibujarAspiraciones();
 
-// ---------- Validacion del formulario ----------
-
+/* =========================================================
+   2. Validacion del Formulario de Contacto
+   ========================================================= */
 const formulario = document.getElementById("form-contacto");
 const correo = document.getElementById("correo");
 const nombre = document.getElementById("nombre");
