@@ -124,14 +124,17 @@ nav {
   border: 3px solid var(--borde);
 }
 
-/* Menú: lista en fila (li con display flex no muestra número) */
+/* Menú: lista en fila (li con display flex no muestra número).
+   Mobile first: en el celular usa letra chica y menos separación para
+   que ocupe menos alto; en pantalla ancha se agranda en la media query. */
 nav ol {
   padding: 0;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 24px;
+  gap: 4px 12px;
+  font-size: 0.75rem;
   font-family: var(--fuente);
 }
 
@@ -221,6 +224,12 @@ nav a:hover {
     justify-content: center;
     gap: 32px;
     padding: 48px 5vw;
+  }
+
+  /* En pantalla ancha el menú recupera su tamaño y separación */
+  nav ol {
+    gap: 8px 24px;
+    font-size: 1rem;
   }
 
   /* Corre la foto un poco hacia la izquierda y la separa del texto.
@@ -552,8 +561,17 @@ table {
 
 th,
 td {
-  padding: 12px;
+  /* Mobile first: celdas más ajustadas para que la tabla entre en el
+     ancho del celular; en pantalla ancha vuelven a 12px */
+  padding: 8px 6px;
   border-bottom: 1px solid var(--borde);
+}
+
+@media (min-width: 700px) {
+  th,
+  td {
+    padding: 12px;
+  }
 }
 
 th {
@@ -724,6 +742,17 @@ footer h2 {
   border-radius: 8px;
   font-family: var(--fuente);
   font-size: 1rem;
+}
+
+/* Los labels de esta sección van alineados con el borde izquierdo del
+   campo y separados del campo anterior */
+.controles-aspiraciones label,
+#form-aspiracion label {
+  text-align: left;
+}
+
+#form-aspiracion label {
+  margin-top: 8px;
 }
 
 #error-aspiracion {
