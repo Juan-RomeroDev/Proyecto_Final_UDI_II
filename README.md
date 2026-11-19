@@ -38,13 +38,13 @@ funciones de orden superior y persistencia con `localStorage`.
 | `#inicio`           | Portada con nombre, perfil y botones de contacto y proyectos                  |
 | `#sobre-mi`         | Presentación, habilidades blandas y descarga del CV en DOCX                   |
 | `#tecnologias`      | Lenguajes, desarrollo web, bases de datos, herramientas y sistemas operativos |
-| `#Idiomas`          | Inglés (B1), portugués (A1) y español (nativo) con banderas                   |
+| `#idiomas`          | Inglés (B1), portugués (A1) y español (nativo) con banderas                   |
 | `#proyectos`        | Los tres trabajos del portfolio, con vista previa y enlaces                   |
 | `#cursos`           | Cursos realizados: reparación de PC, hacking ético y agentes de IA            |
 | `#experiencia`      | Experiencia laboral en atención al cliente                                    |
 | `#aspiraciones`     | Tabla dinámica de empresas y puestos a los que aspiro                         |
-| `#empresa Aplicada` | Análisis de la vacante de Sky Systems, Inc. y comparación con mi perfil       |
-| `#Contactame`       | Formulario de contacto con validación                                         |
+| `#empresa-aplicada` | Análisis de la vacante de Sky Systems, Inc. y comparación con mi perfil       |
+| `#contactame`       | Formulario de contacto con validación                                         |
 
 ---
 
@@ -67,7 +67,7 @@ funciones de orden superior y persistencia con `localStorage`.
   así que se mantienen al recargar la página. Los datos guardados se recuperan
   con `try` / `catch` para no romper la página si están dañados.
 
-**Formulario de contacto** (`#Contactame`)
+**Formulario de contacto** (`#contactame`)
 
 - Validación al enviar: correo obligatorio, nombre y mensaje de al menos 3
   caracteres.
@@ -150,7 +150,7 @@ Después abrí `http://localhost:8000`.
 
 **Juan Pablo Romero**
 
-- Estudiante de la Tecnicatura en Desarrollo de Software, Instituto SuperiorZona Oeste (IZO).
+- Estudiante de la Tecnicatura en Desarrollo de Software, Instituto Superior Zona Oeste (IZO).
 - GitHub: https://github.com/Juan-RomeroDev
 - LinkedIn: https://linkedin.com/in/juan-pablo-romero-a9318429a/
 - Correo: juanpabloromero426@gmail.com
