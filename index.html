@@ -1,32 +1,58 @@
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- charset UTF-8: sin esto no se ven las tildes ni la ñ. lang="es":
+         el lector de pantalla pronuncia en español. viewport: el celular usa su ancho real y las media queries se aplican bien. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi Proyecto Final UDI II</title>
     <!-- Link hacia el archivo de estilo CSS -->
     <link rel="stylesheet" href="CSS/Esqueleto_Pintura.css" />
-    <!-- Pagina utilizada para iconos de Tecnologias: https://devicon.dev/-->
+    <!-- Iconografía por CDN: sin internet el sitio funciona igual, solo se pierden los iconos. -->
+    <!-- Devicon 2.16.0 (cdnjs) - 20 iconos distintos, 40 usos.
+         Su Función es que son los logos de lenguajes, herramientas y sistemas.
+         Dónde los coloque es en la lista de Tecnologías y tarjetas de Proyectos.
+         Los aplique como logos de C, Python, Visual Basic, HTML5, CSS3, JavaScript, PHP, Node.js, React, SQL Server, .NET Framework, Visual Studio,
+         Visual Studio Code, Git, GitHub, Google Workspace, Jira, Markdown, Ubuntu y Windows 11.
+         Un detalle es que con colored el logo usa el color de su marca; sin ella toma el color del texto osea blanco y negro.
+         Su Sitio Oficial: https://devicon.dev/ -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css"
     />
-    <!-- Pagina utilizada para iconos de documentos como el DOCX y extras-->
+    <!-- Font Awesome 6.5.1 (cdnjs) - 8 iconos distintos, 13 usos.
+         Su Función es: marcas, iconos de interfaz y el documento del CV.
+         Como Marcas use (fa-brands): GitHub, LinkedIn, Linux (Kali) y Ubuntu (Lubuntu).
+         En la interfaz de la pagina (fa-solid): archivo Word (CV en DOCX), cubo (VirtualBox), sobre (correo) y teléfono.
+         Dónde los coloque: menú, Sobre mí, Tecnologías, Proyectos, Cursos y Contacto.
+         Un detalle es que me aporta los iconos que Devicon no tiene (Kali) y repite GitHub y Ubuntu. 
+         Su Sitio Oficial: https://fontawesome.com/ -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <!-- Pagina utilizada para iconos de banderas en los idiomas que manejo yo -->
+    <!-- Flag Icons 7.2.3 (cdnjs) - 3 banderas, 3 usos.
+         Su Función es mostrar un icono sobre cada bandera del país de cada idioma.
+         Dónde lo use es en la sección Idiomas.
+         Los aplique como fi-us (Inglés), fi-br (Portugués) y fi-ar (Español).
+         Un detalle es que la clase va en un <span> y el país se escribe con el código de dos letras (us, br, ar), no con el nombre del idioma. 
+         Su Sitio Oficial: https://flagicons.lipis.dev/ -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css"
     />
   </head>
   <body>
+    <!-- Estructura: header (menú) → main (9 secciones) → footer (contacto).
+         Ids: inicio, sobre-mi, tecnologias, idiomas, proyectos, cursos,
+         experiencia, aspiraciones, empresa-aplicada, contactame. -->
     <!-- header: barra de navegación  --------------------------------------------------------------------------------------------------------------------->
     <header>
+      <!-- Menú: ul porque el orden no cambia el significado; cada li apunta
+           a un id del mismo documento. Los dos últimos son externos: target="_blank" con
+           rel="noopener" para que la página abierta no acceda a esta. -->
       <nav>
-        <ol>
+        <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#sobre-mi">Sobre mi</a></li>
           <li><a href="#tecnologias">Tecnologias</a></li>
@@ -55,15 +81,20 @@
               <i class="fa-brands fa-linkedin"></i> LinkedIn
             </a>
           </li>
-        </ol>
+        </ul>
       </nav>
     </header>
 
+    <!-- Un solo main: todo el contenido central. Cada section tiene su h2
+           y los h3 quedan adentro de la sección que les corresponde. -->
     <!-- main ----------------------------------------------------------------------------------------------------------------------------------------->
     <main>
       <!-- Hero: primera plana ------------------------------------------------------------------------------------------------------------------------>
       <section class="hero" id="inicio">
-        <img src="IMG/MiCara_Header.jpg" alt="Imagen de mi cara en el header" />
+        <!-- Hero: único h1 de la página. Los dos botones son enlaces
+             internos (a href="#..."), no button: navegan a otra sección, no
+             ejecutan una acción. La foto lleva alt porque es contenido. -->
+        <img src="IMG/MiCara_Header.jpg" alt="Retrato de Juan Pablo Romero" />
         <div class="hero-texto">
           <p class="hero-etiqueta">
             Auxiliar Soporte Tecnico · Soporte técnico · Troubleshooting · Help
@@ -78,8 +109,11 @@
         </div>
       </section>
 
-      <!-- main -->
+      <!-- main - Sobre mi  -->
       <section id="sobre-mi">
+        <!-- Sobre mí: lo importante va en strong y no en otro h2, que
+             rompería la jerarquía. El CV baja con un enlace + download: el
+             archivo vive en Documentos/ y no depende del backend. -->
         <h2>Sobre mi</h2>
         <div class="caja-sobre-mi">
           <p>
@@ -111,6 +145,9 @@
       </section>
 
       <section id="tecnologias" class="fondo-claro">
+        <!-- Tecnologías: seis grupos, cada uno con su h3 y una ul, porque entre las tecnologías no hay orden.
+             El nombre de cada tecnología va siempre como texto; el icono
+             (CDN) es decorativo: si no carga, la lista se sigue leyendo. -->
         <h2>Tecnologías</h2>
 
         <div class="tecnologias-grid">
@@ -202,6 +239,9 @@
       </section>
       <!-- Idiomas ---------------------------------------------------------------------------------------------------->
       <section id="idiomas">
+        <!-- Idiomas: la bandera es un span vacío con clase de Flag Icons; el
+             dibujo lo pone el CSS, no una imagen. El nivel va en texto para
+             que se entienda aunque las banderas no carguen. -->
         <h2>Idiomas</h2>
         <div class="grid-cajas-Idiomas">
           <div class="caja-Idiomas">
@@ -223,6 +263,9 @@
       </section>
       <!-- Proyectos ------------------------------------------------------------------------------------------------>
       <section id="proyectos">
+        <!-- Proyectos: cada proyecto es un article porque se entiende solo.
+             figure + figcaption agrupan la captura y su pie; los enlaces al
+             repo abren en otra pestaña con rel="noopener". -->
         <h2>Proyectos</h2>
         <div class="grid-cajas-proyectos">
           <article class="caja-proyectos">
@@ -233,7 +276,7 @@
             <figure>
               <img
                 src="IMG/VistaPreviaUDI_Prueba.png"
-                alt="Imagen del proyecto final UDI II - Portfolio Personal"
+                alt="Captura del portfolio personal, proyecto final de UDI II"
               />
               <figcaption>Portfolio Personal</figcaption>
             </figure>
@@ -408,6 +451,9 @@
 
       <!-- Cursos ------------------------------------------------------------------------------------------------------------------------------------------------------------>
       <section id="cursos">
+        <!-- Cursos: mismo patrón que Proyectos (article + figure). La
+             institución y el año van como texto, sin tabla, porque cada
+             curso es una ficha y no un dato para comparar. -->
         <h2>Cursos Realizados</h2>
         <div class="grid-cajas-cursos">
           <article class="caja-cursos">
@@ -539,6 +585,8 @@
       </section>
 
       <section id="experiencia" class="fondo-claro">
+        <!-- Experiencia: un solo article. La empresa va en strong porque es
+             el dato que se busca primero; el período es texto. -->
         <h2>Experiencia Laboral</h2>
         <article class="caja-experiencia">
           <h3>Atención al Cliente y Gestión de Accesos</h3>
@@ -553,6 +601,9 @@
 
       <!-- Empresas y Puestos a los que Aspiro ----------------------------------------------------------------------------------------------------->
       <section id="aspiraciones">
+        <!-- Aspiraciones: el tbody está vacío a propósito, las filas las crea el JS. Los th llevan scope="col" y los dos primeros tienen
+             id para que el script cambie su texto y su flecha de orden.
+             El form no tiene action: el submit se frena con preventDefault. Los p vacíos (el resumen y el error) también los llena el script. -->
         <h2>Empresas y puestos a los que aspiro actualmente 2026</h2>
 
         <div class="controles-aspiraciones">
@@ -592,6 +643,9 @@
 
       <!--Empresa ------------------------------------------------------------------------------------------------------------------------------------------------>
       <section id="empresa-aplicada">
+        <!-- Empresa: tabla de dos columnas porque son datos comparables
+             (lo que pide / lo que aporto); con una lista no se leen en
+             paralelo. -->
         <h2>Empresa a la cual aplique mi CV: Sky Systems, Inc. (SkySys)</h2>
 
         <div class="empresa-info">
@@ -759,6 +813,8 @@
     <footer>
       <!-- Contacto + formulario ---------------------------------------------------------------------------------------------------------------------------------->
       <section id="contactame">
+        <!-- Contacto: el contacto va en footer porque es información de cierre-. address agrupa correo y
+             teléfono. el JS valida y frena el envío. Los span de error están vacíos y los llena el script. -->
         <div class="contacto-grid">
           <div class="contacto-texto">
             <h2>Contactame</h2>
@@ -769,18 +825,24 @@
             </p>
             <div class="caja-contacto">
               <address>
-                <a href="mailto:juanpabloromero426@gmail.com"
-                  ><i class="fa-solid fa-envelope"></i> Mi Correo Personal:
-                  juanpabloromero426@gmail.com</a
-                ><br />
-                <a href="tel:+5493410000000">
-                  <i class="fa-solid fa-phone"></i> Mi Telefono: +54 9 341
-                  000-0000</a
-                >
+                <p>
+                  <a href="mailto:juanpabloromero426@gmail.com"
+                    ><i class="fa-solid fa-envelope"></i> Mi Correo Personal:
+                    juanpabloromero426@gmail.com</a
+                  >
+                </p>
+                <p>
+                  <a href="tel:+5493410000000">
+                    <i class="fa-solid fa-phone"></i> Mi Telefono: +54 9 341
+                    000-0000</a
+                  >
+                </p>
               </address>
             </div>
           </div>
 
+          <!-- Campos: cada label tiene for igual al id del input, y type="email" activa el teclado y la validación del navegador.
+               No hay required ni minlength a propósito: la validación y los tres avisos los maneja el JS para mostrarlos juntos. -->
           <form id="form-contacto">
             <label for="correo">Correo electrónico</label>
             <input
@@ -811,6 +873,8 @@
     </footer>
 
     <!-- Link hacia el archivo de Ejecución de JavaScript -->
+    <!-- El script va al final del body: el navegador lee el documento de arriba hacia abajo, así que cuando corre ya existen todas las secciones y sus ids. 
+     Si estuviera en el head, getElementById devolvería null y la primera línea que use ese null cortaría el archivo: no habría tabla ni formulario. -->
     <script src="JS/Esqueleto_Se_Mueve.js"></script>
   </body>
 </html>

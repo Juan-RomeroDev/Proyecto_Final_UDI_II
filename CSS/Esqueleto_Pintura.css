@@ -12,107 +12,117 @@
   /* Acento (violeta) */
   --acento: #8e2ec4;
   --acento-hover: #b04fe0;
-  --acento-fuerte: #6b1f96;
 
   /* Texto */
   --texto-principal: #e8e8e8;
   --texto-secundario: #b0b0b0;
-  --texto-placeholder: #888888;
 
   /* Bordes y forma */
   --borde: #8e2ec4;
   --radio: 10px;
 
   /* Estado */
-  --exito: #2ec46e;
   --peligro: #c42e4a;
 
   /* Tipografía */
-  --fuente: "verdana", verdana, sans-serif;
+  --fuente: "verdana", verdana, sans-serif; /* fuente única, con respaldo sans-serif */
 }
 
 /* =========================================================
    2. BASE (todo el sitio)
    ========================================================= */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* el width incluye padding y borde: el tamaño es predecible (clase 7) */
 }
 
 html {
-  scroll-padding-top: 70px;
+  scroll-padding-top: 70px; /* al saltar a un #id deja 70px libres arriba para que el menú fijo no tape el título */
 }
 
 body {
   margin: 0;
-  font-family: var(--fuente);
+  font-family: var(--fuente); /* aplica la fuente de la paleta - Antes puesto en root */
   background-color: var(--fondo-principal);
   color: var(--texto-principal);
-  line-height: 1.6;
-  text-align: center;
+  line-height: 1.6; /* interlineado: 1.6 veces el tamaño de la letra */
+  text-align: center; /* centra el texto por defecto */
 }
 
+/* Alterna el fondo de las secciones: se llama "claro" porque es más claro
+   que el negro del body, no porque sea un color claro */
 .fondo-claro {
   background-color: var(--superficie-clara);
   background-image: linear-gradient(
-    180deg,
-    #292247 0%,
-    #100e1c 60%,
-    #000000 100%
+    /* dirección: de arriba hacia abajo */ 180deg,
+    /* arranca violeta */ #292247 0%,
+    /* se oscurece al 60% */ #100e1c 60%,
+    /* termina negro */ #000000 100%
   );
 }
 
 h1 {
-  font-size: clamp(28px, 6vw, 48px);
-  margin-bottom: 12px;
+  font-size: clamp(28px, 6vw, 48px); /* mínimo 28px, crece con el ancho de pantalla, máximo 48px (clase 11) */
+  margin-bottom: 12px; /* espacio debajo del título */
 }
 
 h2 {
-  font-size: 1.75rem;
-  margin-bottom: 16px;
-  text-align: center;
+  font-size: 1.75rem; /* rem = tamaño raíz (16px) x 1.75 = 28px */
+  margin-bottom: 16px; 
+  text-align: center; /* centrar Texto */
 }
 
 h3 {
-  font-size: 1.25rem;
-  margin-bottom: 12px;
+  font-size: 1.25rem; /* 16px x 1.25 = 20px */
+  margin-bottom: 12px; /* espacio debajo */
 }
 
 p {
-  line-height: 1.7;
+  line-height: 1.7; /* interlineado un poco más abierto para leer párrafos */
   color: var(--texto-principal);
   font-family: var(--fuente);
 }
 
 a {
-  color: var(--acento-hover);
+  color: var(--acento-hover); /* enlaces en violeta claro */
   font-family: var(--fuente);
 }
 
 a:hover {
-  color: var(--texto-principal);
+  color: var(--texto-principal); /* al pasar el mouse el enlace pasa a gris claro */
   font-family: var(--fuente);
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  max-width: 100%; /* la imagen nunca se pasa del ancho de su caja */
+  height: auto; /* mantiene la proporción al achicarse (clase 11) */
+}
+
+/* Todos los campos del sitio (contacto y aspiraciones) se ven igual: se
+   define una sola vez acá en vez de repetir la misma regla en cada sección */
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: var(--fondo-principal);
+  color: var(--texto-principal);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-family: var(--fuente);
+  font-size: 1rem;
 }
 
 /* =========================================================
    3. HEADER Y MENÚ
    ========================================================= */
 header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  padding: 4px 16px;
+  position: sticky; /* queda pegado arriba al hacer scroll */
+  top: 0; /* se pega a 0px del borde superior de la pantalla */
+  z-index: 10; /* se dibuja por encima del contenido que pasa por debajo */
+  padding: 4px 16px; /* 4px arriba/abajo, 16px a los costados */
   background-color: var(--fondo-principal);
 }
 
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
   padding: 8px 32px;
   background-color: var(--fondo-principal);
 }
@@ -124,10 +134,10 @@ nav {
   border: 3px solid var(--borde);
 }
 
-/* Menú: lista en fila (li con display flex no muestra número).
+/* Menú: lista en fila (li con display flex saca la viñeta).
    Mobile first: en el celular usa letra chica y menos separación para
    que ocupe menos alto; en pantalla ancha se agranda en la media query. */
-nav ol {
+nav ul {
   padding: 0;
   margin: 0;
   display: flex;
@@ -156,7 +166,9 @@ nav a:hover {
 /* =========================================================
    PRIMERA PLANA (hero)
    ========================================================= */
-/* Mobile first: foto arriba, texto abajo */
+/* Mobile first: foto arriba, texto abajo.
+   El degradado va encima de la foto y se oscurece de izquierda a derecha,
+   así el texto del hero se lee sin depender de lo que muestre la imagen */
 .hero {
   display: flex;
   flex-direction: column;
@@ -227,7 +239,7 @@ nav a:hover {
   }
 
   /* En pantalla ancha el menú recupera su tamaño y separación */
-  nav ol {
+  nav ul {
     gap: 8px 24px;
     font-size: 1rem;
   }
@@ -257,7 +269,7 @@ main section {
 footer section {
   margin: 0;
   padding: 16px 24px;
-  background: var(--superficie);
+  background-color: var(--superficie);
   border-radius: var(--radio);
 }
 
@@ -332,6 +344,10 @@ footer section {
   margin-top: 24px;
 }
 
+/* Tres cortes en todo el sitio: 700 = tablet (las grillas pasan a 2
+   columnas), 900 = el contacto pasa a 2 columnas, 1000 = pantalla ancha
+   (3 columnas en cursos y puesto). Se eligen por el contenido, no por el
+   aparato */
 /* Pantalla mediana */
 @media (min-width: 700px) {
   .grid-cajas-proyectos,
@@ -340,10 +356,8 @@ footer section {
     grid-template-columns: 1fr 1fr;
   }
 
-  /* Ocupa las dos columnas, pero se limita al ancho de una sola
-     tarjeta y queda centrada.
-     El padding lateral extra compensa los 16px de más que le da el gap,
-     así su contenido mide igual que el de las otras tarjetas. */
+  /* Ocupa las dos columnas, pero se limita al ancho de una sola tarjeta y queda centrada.
+     El padding lateral extra compensa los 16px de más que le da el gap, así su contenido mide igual que el de las otras tarjetas. */
   .caja-proyectos-centrada {
     grid-column: span 2;
     max-width: 50%;
@@ -466,19 +480,17 @@ footer section {
   width: 70px;
 }
 
-/* Solo los logos del Workshop llevan esquinas redondeadas */
+/* Solo los logos del Workshop llevan esquinas redondeadas para que queden mas lindos */
 .caja-cursos .Logo-Workshop {
   border-radius: 12px;
 }
 
-/* La captura del escritorio de Kali necesita más ancho que un logo:
-   a 160px se alcanzan a distinguir el escritorio y las ventanas */
+/* La captura del escritorio de Kali necesita más ancho que un logo: a 160px se alcanzan a distinguir el escritorio y las ventanas */
 .caja-cursos .Logo-Kali {
   width: 160px;
 }
 
-/* Logos de las herramientas (Hydra, Nmap): misma altura para que la
-   fila quede pareja, con el ancho que pida cada archivo */
+/* Logos de las herramientas (Hydra, Nmap): misma altura para que la fila quede pareja, con el ancho que pida cada archivo */
 .caja-cursos .Logo-Herramienta {
   height: 50px;
   width: auto;
@@ -502,8 +514,7 @@ footer section {
   color: var(--texto-secundario);
 }
 
-/* Lovable es un SVG descargado, no una fuente: se le fija el ancho
-   para que quede a la altura del resto de los iconos */
+/* Lovable es un SVG descargado, no una fuente, le fije el ancho para que quede a la altura del resto de los iconos */
 .iconos-tech .icono-lovable {
   width: 24px;
   height: auto;
@@ -556,13 +567,14 @@ footer section {
 
 table {
   width: 100%;
+  /* Sin esto cada celda dibuja su propio borde y quedan líneas dobles
+     entre una y otra */
   border-collapse: collapse;
 }
 
 th,
 td {
-  /* Mobile first: celdas más ajustadas para que la tabla entre en el
-     ancho del celular; en pantalla ancha vuelven a 12px */
+  /* Mobile first: celdas más ajustadas para que la tabla entre en el ancho del celular; en pantalla ancha vuelven a 12px */
   padding: 8px 6px;
   border-bottom: 1px solid var(--borde);
 }
@@ -587,6 +599,8 @@ button {
   background-color: var(--acento);
   color: var(--texto-principal);
   border: none;
+  /* Más grande que la mitad del alto: el navegador lo achica solo y las
+     esquinas quedan redondeadas al máximo (forma de píldora) */
   border-radius: 999px;
   font-family: var(--fuente);
   font-size: 1rem;
@@ -619,7 +633,14 @@ footer {
 address {
   text-align: center;
   line-height: 2;
+  /* address viene en cursiva por defecto; acá va normal porque es un dato
+     de contacto y no una cita */
   font-style: normal;
+}
+
+/* Los párrafos del address no llevan margen propio: la separación la da el line-height, así correo y teléfono no quedan muy lejos */
+address p {
+  margin: 0;
 }
 
 /* Títulos más pegados al contenido dentro del footer */
@@ -680,24 +701,17 @@ footer h2 {
   font-family: var(--fuente);
 }
 
-#form-contacto input,
-#form-contacto textarea {
-  width: 100%;
-  padding: 10px 12px;
-  background-color: var(--fondo-principal);
-  color: var(--texto-principal);
-  border: 1px solid var(--borde);
-  border-radius: 8px;
-  font-family: var(--fuente);
-  font-size: 1rem;
-}
-
 #form-contacto textarea {
   height: 80px;
 }
 
 #form-contacto button {
   margin: 8px auto 0;
+}
+
+/* Mensaje de éxito (lo escribe el JS cuando todo valida) */
+#resultado-form {
+  color: var(--acento-hover);
 }
 
 /* Errores (los activa el JS con la clase "error") */
@@ -714,7 +728,9 @@ footer h2 {
 /* =========================================================
    14. ASPIRACIONES (buscador, alta y acciones)
    ========================================================= */
-/* Imagen de fondo que presenta la sección (horizontal, recortada al centro) */
+/* Imagen de fondo que presenta la sección (horizontal, recortada al centro).
+   La primera capa es un negro al 75% encima de la foto: la oscurece para que
+   el texto se lea sobre cualquier parte de la imagen */
 #aspiraciones {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
@@ -731,21 +747,7 @@ footer h2 {
   margin-bottom: 8px;
 }
 
-#buscador-aspiraciones,
-#nuevo-puesto,
-#nueva-empresa {
-  width: 100%;
-  padding: 10px 12px;
-  background-color: var(--fondo-principal);
-  color: var(--texto-principal);
-  border: 1px solid var(--borde);
-  border-radius: 8px;
-  font-family: var(--fuente);
-  font-size: 1rem;
-}
-
-/* Los labels de esta sección van alineados con el borde izquierdo del
-   campo y separados del campo anterior */
+/* Los labels de esta sección van alineados con el borde izquierdo del campo y separados del campo anterior */
 .controles-aspiraciones label,
 #form-aspiracion label {
   text-align: left;

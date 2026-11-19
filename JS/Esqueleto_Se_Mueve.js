@@ -14,6 +14,8 @@ const aspiracionesIniciales = [
 // Copia de los datos iniciales: es la lista que se dibuja y se guarda.
 let aspiraciones = [...aspiracionesIniciales];
 
+// Los elementos se buscan una sola vez al abrir y se guardan en constantes:
+// así no se repite getElementById en cada función.
 const cuerpoAspiraciones = document.getElementById("cuerpo-aspiraciones");
 const buscadorAspiraciones = document.getElementById("buscador-aspiraciones");
 const resumenAspiraciones = document.getElementById("resumen-aspiraciones");
@@ -28,10 +30,14 @@ const thEmpresa = document.getElementById("th-empresa");
 let columna = "puesto";
 let ascendente = true;
 
+// --- Persistencia (localStorage) ---
+// Pasa la lista a texto (JSON) y la guarda en el navegador.
 const guardarAspiraciones = () => {
   localStorage.setItem("aspiraciones", JSON.stringify(aspiraciones));
 };
 
+// Recupera lo guardado. En la primera visita no hace nada y quedan los datos
+// de ejemplo; si el texto está roto deja la lista vacía en vez de romper la página.
 const cargarAspiraciones = () => {
   const texto = localStorage.getItem("aspiraciones");
 
@@ -74,6 +80,7 @@ const cargarOrden = () => {
   }
 };
 
+// --- Dibujo de la tabla ---
 // Arma el título de una columna y le agrega la flecha si es la que ordena.
 const tituloColumna = (nombre, clave) => {
   if (columna !== clave) {
@@ -87,13 +94,15 @@ const tituloColumna = (nombre, clave) => {
   return nombre + " ▼";
 };
 
+// Dibuja la tabla completa: limpia el tbody, ordena, filtra por el buscador,
+// crea una fila por puesto y actualiza el contador. Es la única función que toca el HTML de la tabla.
 const dibujarAspiraciones = () => {
   cuerpoAspiraciones.innerHTML = "";
 
   // Se ordena la lista original a propósito: el botón "Quitar" de cada fila
   // guarda su posición dentro de "aspiraciones", así que el orden que se ve
   // en la tabla y el orden del array tienen que ser el mismo.
-  // sort() y reverse() modifican el array en el lugar (clase 29).
+  // sort() y reverse() modifican el array en el lugar.
   if (columna === "puesto") {
     aspiraciones.sort((a, b) => a.puesto.localeCompare(b.puesto));
   } else {
@@ -170,6 +179,8 @@ const dibujarAspiraciones = () => {
     "Mostrando " + visibles + " de " + aspiraciones.length + " " + sustantivo;
 };
 
+// --- Orden por columna ---
+// Cambia la columna o el sentido del orden, lo guarda y vuelve a dibujar.
 const ordenarPor = (nuevaColumna) => {
   if (columna === nuevaColumna) {
     ascendente = !ascendente;
@@ -181,6 +192,7 @@ const ordenarPor = (nuevaColumna) => {
   dibujarAspiraciones();
 };
 
+// --- Alta y eventos de la tabla ---
 // Devuelve true si el puesto ya está cargado en esa misma empresa.
 const existeAspiracion = (puesto, empresa) => {
   let existe = false;
@@ -199,6 +211,7 @@ const existeAspiracion = (puesto, empresa) => {
   return existe;
 };
 
+// Alta: frena el envío, valida vacíos y duplicados, agrega, guarda y dibuja.
 formAspiracion.addEventListener("submit", (evento) => {
   evento.preventDefault();
 
@@ -251,6 +264,9 @@ const restaurarAspiraciones = () => {
 
 botonRestaurar.addEventListener("click", restaurarAspiraciones);
 
+// --- Arranque ---
+// Orden de arranque: primero el orden guardado, después los datos y recién
+// ahí se dibuja.
 cargarOrden();
 cargarAspiraciones();
 dibujarAspiraciones();
@@ -258,6 +274,7 @@ dibujarAspiraciones();
 /* =========================================================
    2. Validacion del Formulario de Contacto
    ========================================================= */
+// Los elementos del formulario, buscados una sola vez.
 const formulario = document.getElementById("form-contacto");
 const correo = document.getElementById("correo");
 const nombre = document.getElementById("nombre");
@@ -267,16 +284,20 @@ const errorNombre = document.getElementById("error-nombre");
 const errorMensaje = document.getElementById("error-mensaje");
 const resultadoForm = document.getElementById("resultado-form");
 
+// Pinta el borde del campo en rojo y escribe el mensaje debajo.
 const marcarError = (campo, lugar, texto) => {
   campo.classList.add("error");
   lugar.textContent = texto;
 };
 
+// Saca el borde rojo y borra el mensaje.
 const limpiarError = (campo, lugar) => {
   campo.classList.remove("error");
   lugar.textContent = "";
 };
 
+// El formato del correo lo valida el navegador con type="email" antes de que llegue este evento; acá se revisan vacíos y largos.
+// Frena el envío, revisa los tres campos juntos, lleva el foco al primero conerror y avisa si salió bien.
 formulario.addEventListener("submit", (evento) => {
   evento.preventDefault();
 
