@@ -297,7 +297,7 @@ const limpiarError = (campo, lugar) => {
 };
 
 // El formato del correo lo valida el navegador con type="email" antes de que llegue este evento; acá se revisan vacíos y largos.
-// Frena el envío, revisa los tres campos juntos, lleva el foco al primero conerror y avisa si salió bien.
+// Frena el envío, revisa los tres campos juntos, lleva el foco al primero con error y avisa si salió bien.
 formulario.addEventListener("submit", (evento) => {
   evento.preventDefault();
 

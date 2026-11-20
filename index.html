@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- INICIO BLOQUE 1  -->
     <!-- charset UTF-8: sin esto no se ven las tildes ni la ñ. lang="es":
          el lector de pantalla pronuncia en español. viewport: el celular usa su ancho real y las media queries se aplican bien. -->
     <meta charset="UTF-8" />
@@ -22,7 +23,7 @@
     />
     <!-- Font Awesome 6.5.1 (cdnjs) - 8 iconos distintos, 13 usos.
          Su Función es: marcas, iconos de interfaz y el documento del CV.
-         Como Marcas use (fa-brands): GitHub, LinkedIn, Linux (Kali) y Ubuntu (Lubuntu).
+         Que Marcas use (fa-brands): GitHub, LinkedIn, Linux (Kali) y Ubuntu (Lubuntu).
          En la interfaz de la pagina (fa-solid): archivo Word (CV en DOCX), cubo (VirtualBox), sobre (correo) y teléfono.
          Dónde los coloque: menú, Sobre mí, Tecnologías, Proyectos, Cursos y Contacto.
          Un detalle es que me aporta los iconos que Devicon no tiene (Kali) y repite GitHub y Ubuntu. 
@@ -42,16 +43,19 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css"
     />
   </head>
+  <!-- FIN BLOQUE 1 -->
   <body>
     <!-- Estructura: header (menú) → main (9 secciones) → footer (contacto).
          Ids: inicio, sobre-mi, tecnologias, idiomas, proyectos, cursos,
          experiencia, aspiraciones, empresa-aplicada, contactame. -->
     <!-- header: barra de navegación  --------------------------------------------------------------------------------------------------------------------->
     <header>
+      <!-- BLOQUE 2 -->
       <!-- Menú: ul porque el orden no cambia el significado; cada li apunta
            a un id del mismo documento. Los dos últimos son externos: target="_blank" con
            rel="noopener" para que la página abierta no acceda a esta. -->
       <nav>
+        <!-- INICIO BLOQUE 3 -->
         <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#sobre-mi">Sobre mi</a></li>
@@ -69,7 +73,7 @@
               target="_blank"
               rel="noopener"
             >
-              <i class="fa-brands fa-github"></i> GitHub
+              <i class="fa-brands fa-github"></i>
             </a>
           </li>
           <li>
@@ -78,10 +82,11 @@
               target="_blank"
               rel="noopener"
             >
-              <i class="fa-brands fa-linkedin"></i> LinkedIn
+              <i class="fa-brands fa-linkedin"></i>
             </a>
           </li>
         </ul>
+        <!-- FIN BLOQUE 3 -->
       </nav>
     </header>
 
@@ -89,8 +94,10 @@
            y los h3 quedan adentro de la sección que les corresponde. -->
     <!-- main ----------------------------------------------------------------------------------------------------------------------------------------->
     <main>
+      <!-- BLOQUE 2 -->
       <!-- Hero: primera plana ------------------------------------------------------------------------------------------------------------------------>
       <section class="hero" id="inicio">
+        <!-- INICIO BLOQUE 4 -->
         <!-- Hero: único h1 de la página. Los dos botones son enlaces
              internos (a href="#..."), no button: navegan a otra sección, no
              ejecutan una acción. La foto lleva alt porque es contenido. -->
@@ -625,6 +632,7 @@
         </form>
         <p id="error-aspiracion"></p>
 
+        <!-- INICIO BLOQUE 5 -->
         <table>
           <thead>
             <tr>
@@ -640,8 +648,10 @@
           Restaurar lista
         </button>
       </section>
+      <!-- FIN BLOQUE 5 -->
 
       <!--Empresa ------------------------------------------------------------------------------------------------------------------------------------------------>
+      <!-- INICIO BLOQUE 5 -->
       <section id="empresa-aplicada">
         <!-- Empresa: tabla de dos columnas porque son datos comparables
              (lo que pide / lo que aporto); con una lista no se leen en
@@ -714,6 +724,7 @@
             </tbody>
           </table>
         </div>
+        <!-- FIN BLOQUE 5 -->
 
         <div class="grid-cajas-Puesto-Responsabilidades">
           <div class="caja-responsabilidades">
@@ -808,9 +819,11 @@
           >
         </p>
       </section>
+      <!-- FIN BLOQUE 4 -->
     </main>
 
     <footer>
+      <!-- BLOQUE 2 -->
       <!-- Contacto + formulario ---------------------------------------------------------------------------------------------------------------------------------->
       <section id="contactame">
         <!-- Contacto: el contacto va en footer porque es información de cierre-. address agrupa correo y
@@ -843,6 +856,7 @@
 
           <!-- Campos: cada label tiene for igual al id del input, y type="email" activa el teclado y la validación del navegador.
                No hay required ni minlength a propósito: la validación y los tres avisos los maneja el JS para mostrarlos juntos. -->
+          <!-- INICIO BLOQUE 6 -->
           <form id="form-contacto">
             <label for="correo">Correo electrónico</label>
             <input
@@ -871,6 +885,7 @@
         </div>
       </section>
     </footer>
+    <!-- FIN BLOQUE 6 -->
 
     <!-- Link hacia el archivo de Ejecución de JavaScript -->
     <!-- El script va al final del body: el navegador lee el documento de arriba hacia abajo, así que cuando corre ya existen todas las secciones y sus ids. 

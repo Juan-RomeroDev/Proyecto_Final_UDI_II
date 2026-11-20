@@ -1,5 +1,5 @@
 /* =========================================================
-   1. PALETA DE COLORES (variables - ROOT)
+   1. PALETA DE COLORES (variables - ROOT) - INICIO BLOQUE 1 
    ========================================================= */
 :root {
   /* Fondos */
@@ -28,9 +28,14 @@
   --fuente: "verdana", verdana, sans-serif; /* fuente única, con respaldo sans-serif */
 }
 
+/* FIN BLOQUE 1 */
+
 /* =========================================================
    2. BASE (todo el sitio)
    ========================================================= */
+/* INICIO BLOQUE 2 */   
+
+
 * {
   box-sizing: border-box; /* el width incluye padding y borde: el tamaño es predecible (clase 7) */
 }
@@ -38,6 +43,8 @@
 html {
   scroll-padding-top: 70px; /* al saltar a un #id deja 70px libres arriba para que el menú fijo no tape el título */
 }
+
+/* FIN BLOQUE 2 */   
 
 body {
   margin: 0;
@@ -137,11 +144,11 @@ nav {
 /* Menú: lista en fila (li con display flex saca la viñeta).
    Mobile first: en el celular usa letra chica y menos separación para
    que ocupe menos alto; en pantalla ancha se agranda en la media query. */
-nav ul {
+nav ul { /* BLOQUE 3 */
   padding: 0;
   margin: 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* fkex-wrap: wrap */
   justify-content: center;
   gap: 4px 12px;
   font-size: 0.75rem;
@@ -169,7 +176,7 @@ nav a:hover {
 /* Mobile first: foto arriba, texto abajo.
    El degradado va encima de la foto y se oscurece de izquierda a derecha,
    así el texto del hero se lee sin depender de lo que muestre la imagen */
-.hero {
+.hero { /* BLOQUE 3 */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -344,11 +351,12 @@ footer section {
   margin-top: 24px;
 }
 
-/* Tres cortes en todo el sitio: 700 = tablet (las grillas pasan a 2
-   columnas), 900 = el contacto pasa a 2 columnas, 1000 = pantalla ancha
-   (3 columnas en cursos y puesto). Se eligen por el contenido, no por el
-   aparato */
-/* Pantalla mediana */
+/* Tres cortes en todo el sitio: 
+   700 = tablet (las grillas pasan a 2 columnas), 
+   900 = el contacto pasa a 2 columnas, 
+   1000 = pantalla ancha (3 columnas en cursos y puesto). 
+   Se eligen por el contenido, no por el aparato */
+/* Pantalla mediana - Tablet */
 @media (min-width: 700px) {
   .grid-cajas-proyectos,
   .grid-cajas-cursos,
@@ -670,6 +678,7 @@ footer h2 {
   text-align: left;
 }
 
+/*  900 = el contacto pasa a 2 columnas */
 @media (min-width: 900px) {
   .contacto-grid {
     grid-template-columns: 1fr 1fr;
